@@ -680,3 +680,15 @@ time 1543032412
 old [description:"upkeep" entry:"1543030468" modified:"1543031343" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
 new [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" modified:"1543032412" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
 ---
+time 1543033903
+new [description:"fix_directory_note_integration" entry:"1543033903" modified:"1543033903" project:"upkeep" status:"pending" tags:"one_off" uuid:"a35cecd1-d1c1-4972-b63f-25a86e0be3a6"]
+---
+time 1543033981
+new [description:"migrate_email_passwords_to_lastpass" entry:"1543033981" modified:"1543033981" project:"upkeep" status:"pending" tags:"one_off" uuid:"03d4af7f-4ba2-48c7-9f7a-26d34952c9ac"]
+---
+time 1543034162
+new [description:"add_timewarrior" entry:"1543034162" modified:"1543034162" project:"upkeep" status:"pending" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
+---
+time 1543034248
+new [description:"integrate_reminders" entry:"1543034248" modified:"1543034248" project:"upkeep" status:"pending" tags:"one_off" uuid:"b0574fdb-170f-4d63-a3f3-438d1d8f3e0f"]
+---

@@ -5,3 +5,7 @@
 [annotation_1534785148:"1" annotation_1535439866:"1" annotation_1535560603:"1" annotation_1535944577:"1" description:"knee" entry:"1532406734" min_frequency:"5" modified:"1543031585" project:"physical" status:"pending" tags:"project_track" uuid:"906ba975-73bf-4329-94bd-c3b6b68cb17f" weekly_frequency:"7"]
 [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" modified:"1543032412" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
 [description:"physical" entry:"1543031391" modified:"1543031560" project:"physical" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+[description:"fix_directory_note_integration" entry:"1543033903" modified:"1543033903" project:"upkeep" status:"pending" tags:"one_off" uuid:"a35cecd1-d1c1-4972-b63f-25a86e0be3a6"]
+[description:"migrate_email_passwords_to_lastpass" entry:"1543033981" modified:"1543033981" project:"upkeep" status:"pending" tags:"one_off" uuid:"03d4af7f-4ba2-48c7-9f7a-26d34952c9ac"]
+[description:"add_timewarrior" entry:"1543034162" modified:"1543034162" project:"upkeep" status:"pending" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
+[description:"integrate_reminders" entry:"1543034248" modified:"1543034248" project:"upkeep" status:"pending" tags:"one_off" uuid:"b0574fdb-170f-4d63-a3f3-438d1d8f3e0f"]
