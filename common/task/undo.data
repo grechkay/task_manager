@@ -627,3 +627,56 @@ time 1541863997
 old [description:"Knee exercise + 1 hour of taskwarrior after wakeup" entry:"1541820321" modified:"1541820321" status:"pending" uuid:"c229ca0f-2f7c-4cf2-be9c-2151d9596ef7"]
 new [description:"Knee exercise + 1 hour of taskwarrior after wakeup" end:"1541863997" entry:"1541820321" modified:"1541863997" status:"completed" uuid:"c229ca0f-2f7c-4cf2-be9c-2151d9596ef7"]
 ---
+time 1543030214
+old [description:"daily_log" entry:"1532406369" modified:"1532407149" status:"pending" tags:"project_notes" uuid:"3c6b4db3-0005-449a-b7b6-ddbba391ee37"]
+new [description:"daily_log" end:"1543030211" entry:"1532406369" modified:"1543030214" status:"deleted" tags:"project_notes" uuid:"3c6b4db3-0005-449a-b7b6-ddbba391ee37"]
+---
+time 1543030359
+new [description:"daily_upkeep" entry:"1543030359" modified:"1543030359" status:"pending" uuid:"ca0cd6d2-eac8-471e-9d76-c9c1196337aa"]
+---
+time 1543030398
+old [description:"daily_upkeep" entry:"1543030359" modified:"1543030359" status:"pending" uuid:"ca0cd6d2-eac8-471e-9d76-c9c1196337aa"]
+new [description:"daily_upkeep" end:"1543030396" entry:"1543030359" modified:"1543030398" status:"deleted" uuid:"ca0cd6d2-eac8-471e-9d76-c9c1196337aa"]
+---
+time 1543030468
+new [description:"upkeep" entry:"1543030468" modified:"1543030468" project:"upkeep" status:"pending" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+---
+time 1543031343
+old [description:"upkeep" entry:"1543030468" modified:"1543030468" project:"upkeep" status:"pending" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+new [description:"upkeep" entry:"1543030468" modified:"1543031343" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+---
+time 1543031391
+new [description:"knee" entry:"1543031391" modified:"1543031391" project:"knee" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+---
+time 1543031431
+old [annotation_1534785148:"1" annotation_1535439866:"1" annotation_1535560603:"1" annotation_1535944577:"1" description:"knee" entry:"1532406734" min_frequency:"5" modified:"1535944577" status:"pending" tags:"project_track" uuid:"906ba975-73bf-4329-94bd-c3b6b68cb17f" weekly_frequency:"7"]
+new [annotation_1534785148:"1" annotation_1535439866:"1" annotation_1535560603:"1" annotation_1535944577:"1" description:"knee" entry:"1532406734" min_frequency:"5" modified:"1543031431" project:"knee" status:"pending" tags:"project_track" uuid:"906ba975-73bf-4329-94bd-c3b6b68cb17f" weekly_frequency:"7"]
+---
+time 1543031459
+old [annotation_1532410172:"1" annotation_1532500862:"1" annotation_1532586757:"1" annotation_1532674259:"1" annotation_1532757218:"1" annotation_1532801836:"1" annotation_1532849028:"1" annotation_1532934844:"1" annotation_1533020601:"1" annotation_1534143591:"1" annotation_1534177619:"1" annotation_1534228814:"1" annotation_1534261678:"1" annotation_1534318862:"1" annotation_1534340960:"1" annotation_1534412759:"1" annotation_1534478354:"1" annotation_1534524367:"1" annotation_1534566997:"1" annotation_1534665265:"1" annotation_1534750375:"1" annotation_1534785235:"1" annotation_1534837357:"1" annotation_1534922012:"1" annotation_1535009295:"1" annotation_1535267623:"1" annotation_1535442566:"1" annotation_1535526354:"1" annotation_1535560609:"1" annotation_1535609345:"1" annotation_1535706804:"1" annotation_1535784773:"1" description:"teeth" entry:"1532406700" min_frequency:"7" modified:"1535784773" status:"pending" tags:"project_track" uuid:"f2c69ce7-8455-4752-8524-f6e1edc4014c" weekly_frequency:"14"]
+new [annotation_1532410172:"1" annotation_1532500862:"1" annotation_1532586757:"1" annotation_1532674259:"1" annotation_1532757218:"1" annotation_1532801836:"1" annotation_1532849028:"1" annotation_1532934844:"1" annotation_1533020601:"1" annotation_1534143591:"1" annotation_1534177619:"1" annotation_1534228814:"1" annotation_1534261678:"1" annotation_1534318862:"1" annotation_1534340960:"1" annotation_1534412759:"1" annotation_1534478354:"1" annotation_1534524367:"1" annotation_1534566997:"1" annotation_1534665265:"1" annotation_1534750375:"1" annotation_1534785235:"1" annotation_1534837357:"1" annotation_1534922012:"1" annotation_1535009295:"1" annotation_1535267623:"1" annotation_1535442566:"1" annotation_1535526354:"1" annotation_1535560609:"1" annotation_1535609345:"1" annotation_1535706804:"1" annotation_1535784773:"1" description:"teeth" entry:"1532406700" min_frequency:"7" modified:"1543031459" project:"upkeep" status:"pending" tags:"project_track" uuid:"f2c69ce7-8455-4752-8524-f6e1edc4014c" weekly_frequency:"14"]
+---
+time 1543031470
+old [annotation_1532410152:"1" annotation_1532500856:"1" annotation_1532587253:"1" annotation_1532674262:"1" annotation_1534143583:"1" annotation_1534228807:"1" annotation_1534340956:"1" annotation_1534785240:"1" annotation_1534922019:"1" annotation_1535526358:"1" description:"floss" entry:"1532406663" min_frequency:"4" modified:"1535526358" status:"pending" tags:"project_track" uuid:"8a897dc7-db8f-463b-869a-b0d4d18f8380" weekly_frequency:"7"]
+new [annotation_1532410152:"1" annotation_1532500856:"1" annotation_1532587253:"1" annotation_1532674262:"1" annotation_1534143583:"1" annotation_1534228807:"1" annotation_1534340956:"1" annotation_1534785240:"1" annotation_1534922019:"1" annotation_1535526358:"1" description:"floss" entry:"1532406663" min_frequency:"4" modified:"1543031470" project:"upkeep" status:"pending" tags:"project_track" uuid:"8a897dc7-db8f-463b-869a-b0d4d18f8380" weekly_frequency:"7"]
+---
+time 1543031483
+old [annotation_1532450795:"163" annotation_1532500418:"166" annotation_1532529434:"164" annotation_1532586746:"169" annotation_1532675246:"166" annotation_1534143548:"164" annotation_1534177610:"162" annotation_1534228880:"165" annotation_1534261657:"164" annotation_1534318904:"166" annotation_1534340929:"165" annotation_1534412767:"163" annotation_1534524501:"164" annotation_1534568046:"168" annotation_1534665247:"167" annotation_1534750380:"167" annotation_1534778708:"166" annotation_1534837453:"167" annotation_1534921412:"168" annotation_1535007899:"168" annotation_1535039183:"166" annotation_1535090998:"170" annotation_1535226256:"167" annotation_1535310889:"165" annotation_1535376631:"165" annotation_1535469995:"167" annotation_1535519890:"168" annotation_1535556172:"167" annotation_1535609528:"168" annotation_1535706798:"170" annotation_1535724964:"167" annotation_1535937559:"168" annotation_1535992314:"167" annotation_1536003160:"166" annotation_1536068839:"165" annotation_1536767002:"168" description:"weight" entry:"1532406638" min_frequency:"5" modified:"1536767002" status:"pending" tags:"project_track,numeric" uuid:"abcd624e-184a-46b1-9590-28df98761d25" weekly_frequency:"7"]
+new [annotation_1532450795:"163" annotation_1532500418:"166" annotation_1532529434:"164" annotation_1532586746:"169" annotation_1532675246:"166" annotation_1534143548:"164" annotation_1534177610:"162" annotation_1534228880:"165" annotation_1534261657:"164" annotation_1534318904:"166" annotation_1534340929:"165" annotation_1534412767:"163" annotation_1534524501:"164" annotation_1534568046:"168" annotation_1534665247:"167" annotation_1534750380:"167" annotation_1534778708:"166" annotation_1534837453:"167" annotation_1534921412:"168" annotation_1535007899:"168" annotation_1535039183:"166" annotation_1535090998:"170" annotation_1535226256:"167" annotation_1535310889:"165" annotation_1535376631:"165" annotation_1535469995:"167" annotation_1535519890:"168" annotation_1535556172:"167" annotation_1535609528:"168" annotation_1535706798:"170" annotation_1535724964:"167" annotation_1535937559:"168" annotation_1535992314:"167" annotation_1536003160:"166" annotation_1536068839:"165" annotation_1536767002:"168" description:"weight" entry:"1532406638" min_frequency:"5" modified:"1543031483" project:"upkeep" status:"pending" tags:"project_track,numeric" uuid:"abcd624e-184a-46b1-9590-28df98761d25" weekly_frequency:"7"]
+---
+time 1543031538
+old [annotation_1534916530:"1000" annotation_1535439872:"350" annotation_1535519822:"500" description:"swim" entry:"1532406716" min_frequency:"2" modified:"1535519822" status:"pending" tags:"project_track,numeric" uuid:"362dbb72-d3fd-4c19-a9c9-56ac2770dfef" weekly_frequency:"5"]
+new [annotation_1534916530:"1000" annotation_1535439872:"350" annotation_1535519822:"500" description:"swim" entry:"1532406716" min_frequency:"2" modified:"1543031538" project:"physical" status:"pending" tags:"project_track,numeric" uuid:"362dbb72-d3fd-4c19-a9c9-56ac2770dfef" weekly_frequency:"5"]
+---
+time 1543031560
+old [description:"knee" entry:"1543031391" modified:"1543031391" project:"knee" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+new [description:"physical" entry:"1543031391" modified:"1543031560" project:"physical" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+---
+time 1543031585
+old [annotation_1534785148:"1" annotation_1535439866:"1" annotation_1535560603:"1" annotation_1535944577:"1" description:"knee" entry:"1532406734" min_frequency:"5" modified:"1543031431" project:"knee" status:"pending" tags:"project_track" uuid:"906ba975-73bf-4329-94bd-c3b6b68cb17f" weekly_frequency:"7"]
+new [annotation_1534785148:"1" annotation_1535439866:"1" annotation_1535560603:"1" annotation_1535944577:"1" description:"knee" entry:"1532406734" min_frequency:"5" modified:"1543031585" project:"physical" status:"pending" tags:"project_track" uuid:"906ba975-73bf-4329-94bd-c3b6b68cb17f" weekly_frequency:"7"]
+---
+time 1543032412
+old [description:"upkeep" entry:"1543030468" modified:"1543031343" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+new [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" modified:"1543032412" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+---
