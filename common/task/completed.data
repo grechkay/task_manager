@@ -1,3 +1,5 @@
+[description:"fix_directory_note_integration" end:"1543103672" entry:"1543033903" modified:"1543103672" project:"upkeep" status:"completed" tags:"one_off" uuid:"a35cecd1-d1c1-4972-b63f-25a86e0be3a6"]
+[annotation_1543103342:"2018-11-24_0_test_note" description:"test" end:"1543103412" entry:"1543103252" modified:"1543103415" project:"test" status:"deleted" tags:"main" uuid:"63707d48-185d-4935-aa3e-a109e756c2ff"]
 [description:"Add AGYG repository" end:"1543035643" entry:"1543034796" modified:"1543035643" project:"upkeep" status:"completed" tags:"one_off" uuid:"9c854a84-9a89-462f-a1fe-a526c8ec659f"]
 [description:"daily_upkeep" end:"1543030396" entry:"1543030359" modified:"1543030398" status:"deleted" uuid:"ca0cd6d2-eac8-471e-9d76-c9c1196337aa"]
 [description:"daily_log" end:"1543030211" entry:"1532406369" modified:"1543030214" status:"deleted" tags:"project_notes" uuid:"3c6b4db3-0005-449a-b7b6-ddbba391ee37"]

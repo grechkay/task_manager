@@ -2,9 +2,16 @@ import sys, tempfile, os
 from subprocess import call
 from taskw import TaskWarrior
 from datetime import datetime
+from pathlib import Path
 
 # First argument is the project
 # Second argument is the title/description
+
+current_dir = os.getcwd()
+home_dir = str(Path.home())
+
+if current_dir != '{}/core/common'.format(home_dir):
+    raise ValueError('Wrong directory; switch to ~/core/common')
 
 def get_task_id(project):
     w = TaskWarrior()
@@ -51,4 +58,4 @@ with open(full_note_path, 'w') as _in:
     _in.flush()
     call([EDITOR, _in.name])
 
-call(['task', str(task_id), 'annotate', '{0}_{1}'.format(note_name, description)])
+call(['task', str(task_id), 'annotate', note_name])

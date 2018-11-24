@@ -134,3 +134,6 @@ alias aws2='ssh -i ~/.ssh/cuda_pair.pem -L 8888:localhost:8888 ubuntu@54.152.188
 export PATH="/home/yevgeniy/miniconda3/bin:$PATH"
 #alias t='task -project_track -project_notes'
 alias t='task list +one_off'
+alias m='task list +main'
+alias tn='python ~/core/common/task_scripts/project_note.py'
+alias tr='python ~/core/common/task_scripts/project_readme.py'

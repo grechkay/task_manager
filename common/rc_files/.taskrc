@@ -31,7 +31,12 @@ data.location=~/core/common/task
 
 uda.min_frequency.type=numeric
 uda.min_frequency.label=Minimum Frequency
+
 uda.weekly_frequency.type=numeric
 uda.weekly_frequency.label=Weekly Frequency
+
 uda.observed_frequency.type=numeric
 uda.observed_frequency.label=The Observed Frequency Value
+
+uda.full_name.type=string
+uda.full_name.label=The full name of the task/project
