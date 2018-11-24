@@ -179,3 +179,4 @@
 {"description":"migrate_email_passwords_to_lastpass","entry":"20181124T043301Z","modified":"20181124T043301Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"03d4af7f-4ba2-48c7-9f7a-26d34952c9ac"}
 {"description":"add_timewarrior","entry":"20181124T043602Z","modified":"20181124T043602Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"87ea1047-6b59-4d72-bab6-aae00867fea3"}
 {"description":"integrate_reminders","entry":"20181124T043728Z","modified":"20181124T043728Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"b0574fdb-170f-4d63-a3f3-438d1d8f3e0f"}
+{"description":"book_club","entry":"20181124T043935Z","modified":"20181124T043935Z","project":"book_club","status":"pending","tags":["main"],"uuid":"904a9e71-751c-4894-9949-f529603f3027"}

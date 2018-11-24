@@ -692,3 +692,6 @@ new [description:"add_timewarrior" entry:"1543034162" modified:"1543034162" proj
 time 1543034248
 new [description:"integrate_reminders" entry:"1543034248" modified:"1543034248" project:"upkeep" status:"pending" tags:"one_off" uuid:"b0574fdb-170f-4d63-a3f3-438d1d8f3e0f"]
 ---
+time 1543034375
+new [description:"book_club" entry:"1543034375" modified:"1543034375" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+---
