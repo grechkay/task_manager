@@ -705,3 +705,38 @@ new [description:"Add AGYG repository" end:"1543035643" entry:"1543034796" modif
 time 1543035679
 new [description:"review_gtd" entry:"1543035679" modified:"1543035679" project:"upkeep" status:"pending" tags:"one_off" uuid:"5f94a0fe-2669-4365-a7fe-4c8232be1b08"]
 ---
+time 1543041432
+old [description:"book_club" entry:"1543034375" modified:"1543034375" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+new [annotation_1543041432:"2018-11-23_0_ATG_Ch9" description:"book_club" entry:"1543034375" modified:"1543041432" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+---
+time 1543088381
+new [description:"atg" entry:"1543088381" modified:"1543088381" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543088853
+old [description:"atg" entry:"1543088381" modified:"1543088381" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [description:"atg" entry:"1543088381" modified:"1543088853" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543090253
+old [description:"atg" entry:"1543088381" modified:"1543088853" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [depends:"904a9e71-751c-4894-9949-f529603f3027" description:"atg" entry:"1543088381" modified:"1543090253" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543090320
+old [depends:"904a9e71-751c-4894-9949-f529603f3027" description:"atg" entry:"1543088381" modified:"1543090253" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [description:"atg" entry:"1543088381" modified:"1543090320" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543090330
+old [annotation_1543041432:"2018-11-23_0_ATG_Ch9" description:"book_club" entry:"1543034375" modified:"1543041432" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+new [annotation_1543041432:"2018-11-23_0_ATG_Ch9" depends:"56db7235-cce7-4041-be2f-843232678686" description:"book_club" entry:"1543034375" modified:"1543090330" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+---
+time 1543090484
+old [description:"atg" entry:"1543088381" modified:"1543090320" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" description:"atg" entry:"1543088381" modified:"1543090484" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543095283
+old [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" description:"atg" entry:"1543088381" modified:"1543090484" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" description:"atg" entry:"1543088381" modified:"1543095283" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543095919
+old [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" description:"atg" entry:"1543088381" modified:"1543095283" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" annotation_1543095919:"2018-11-24_2_ATG_Ch11_ATG_Ch11" description:"atg" entry:"1543088381" modified:"1543095919" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---

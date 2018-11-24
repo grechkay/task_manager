@@ -35,7 +35,11 @@ for note in all_notes:
     if date == note[:10]:
         note_number += 1
 
-note_name = '{date}_{num}'.format(date=date, num=note_number)
+note_name = '{date}_{num}_{desc}'.format(
+        date=date, 
+        num=note_number,
+        desc=description,
+)
 full_note_path = 'task_notes/{project}/{month}/{name}'.format(
         project=project,
         month=date[:7],
