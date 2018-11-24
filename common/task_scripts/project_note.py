@@ -20,15 +20,15 @@ EDITOR = os.environ.get('EDITOR','vim')
 date = datetime.strftime(datetime.now(),'%Y-%m-%d')
 task_id = get_task_id(project)
 
-all_note_folders = os.listdir('task_notes')
+all_note_folders = os.listdir('project_notes')
 if project not in all_note_folders:
-    call(['mkdir', 'task_notes/{}'.format(project)])
+    call(['mkdir', 'project_notes/{}'.format(project)])
 
-all_months = os.listdir('task_notes/{}'.format(project))
+all_months = os.listdir('project_notes/{}'.format(project))
 if date[:7] not in all_months:
-    call(['mkdir', 'task_notes/{0}/{1}'.format(project, date[:7])])
+    call(['mkdir', 'project_notes/{0}/{1}'.format(project, date[:7])])
 
-all_notes = os.listdir('task_notes/{0}/{1}'.format(project, date[:7]))
+all_notes = os.listdir('project_notes/{0}/{1}'.format(project, date[:7]))
 note_number = 0
 
 for note in all_notes:
@@ -40,7 +40,7 @@ note_name = '{date}_{num}_{desc}'.format(
         num=note_number,
         desc=description,
 )
-full_note_path = 'task_notes/{project}/{month}/{name}'.format(
+full_note_path = 'project_notes/{project}/{month}/{name}'.format(
         project=project,
         month=date[:7],
         name=note_name,

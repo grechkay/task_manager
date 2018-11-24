@@ -740,3 +740,19 @@ time 1543095919
 old [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" description:"atg" entry:"1543088381" modified:"1543095283" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
 new [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" annotation_1543095919:"2018-11-24_2_ATG_Ch11_ATG_Ch11" description:"atg" entry:"1543088381" modified:"1543095919" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
 ---
+time 1543096106
+old [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" annotation_1543095919:"2018-11-24_2_ATG_Ch11_ATG_Ch11" description:"atg" entry:"1543088381" modified:"1543095919" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543090484:"2018-11-24_0_ATG_Ch9_ATG_Ch9" annotation_1543095283:"2018-11-24_1_ATG_Ch10_ATG_Ch10" annotation_1543095919:"2018-11-24_2_ATG_Ch11_ATG_Ch11" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543096106" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543096127
+old [annotation_1543041432:"2018-11-23_0_ATG_Ch9" depends:"56db7235-cce7-4041-be2f-843232678686" description:"book_club" entry:"1543034375" modified:"1543090330" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+new [annotation_1543041432:"2018-11-23_0_ATG_Ch9" depends:"56db7235-cce7-4041-be2f-843232678686" description:"book_club" entry:"1543034375" full_name:"Asya and Yev's Book Club" modified:"1543096127" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
+---
+time 1543096150
+old [description:"physical" entry:"1543031391" modified:"1543031560" project:"physical" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+new [description:"physical" entry:"1543031391" full_name:"Project to track physical activity." modified:"1543096150" project:"physical" status:"pending" tags:"main" uuid:"a50ee26a-4b7b-4bfa-83ab-10b7353e17ce"]
+---
+time 1543096176
+old [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" modified:"1543032412" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+new [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" full_name:"Project to track your upkeep; this is both daily tasks and general self-improvement." modified:"1543096176" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+---
