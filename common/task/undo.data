@@ -695,3 +695,13 @@ new [description:"integrate_reminders" entry:"1543034248" modified:"1543034248" 
 time 1543034375
 new [description:"book_club" entry:"1543034375" modified:"1543034375" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
 ---
+time 1543034796
+new [description:"Add AGYG repository" entry:"1543034796" modified:"1543034796" project:"upkeep" status:"pending" tags:"one_off" uuid:"9c854a84-9a89-462f-a1fe-a526c8ec659f"]
+---
+time 1543035643
+old [description:"Add AGYG repository" entry:"1543034796" modified:"1543034796" project:"upkeep" status:"pending" tags:"one_off" uuid:"9c854a84-9a89-462f-a1fe-a526c8ec659f"]
+new [description:"Add AGYG repository" end:"1543035643" entry:"1543034796" modified:"1543035643" project:"upkeep" status:"completed" tags:"one_off" uuid:"9c854a84-9a89-462f-a1fe-a526c8ec659f"]
+---
+time 1543035679
+new [description:"review_gtd" entry:"1543035679" modified:"1543035679" project:"upkeep" status:"pending" tags:"one_off" uuid:"5f94a0fe-2669-4365-a7fe-4c8232be1b08"]
+---

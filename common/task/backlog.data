@@ -180,3 +180,6 @@
 {"description":"add_timewarrior","entry":"20181124T043602Z","modified":"20181124T043602Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"87ea1047-6b59-4d72-bab6-aae00867fea3"}
 {"description":"integrate_reminders","entry":"20181124T043728Z","modified":"20181124T043728Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"b0574fdb-170f-4d63-a3f3-438d1d8f3e0f"}
 {"description":"book_club","entry":"20181124T043935Z","modified":"20181124T043935Z","project":"book_club","status":"pending","tags":["main"],"uuid":"904a9e71-751c-4894-9949-f529603f3027"}
+{"description":"Add AGYG repository","entry":"20181124T044636Z","modified":"20181124T044636Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"9c854a84-9a89-462f-a1fe-a526c8ec659f"}
+{"description":"Add AGYG repository","end":"20181124T050043Z","entry":"20181124T044636Z","modified":"20181124T050043Z","project":"upkeep","status":"completed","tags":["one_off"],"uuid":"9c854a84-9a89-462f-a1fe-a526c8ec659f"}
+{"description":"review_gtd","entry":"20181124T050119Z","modified":"20181124T050119Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"5f94a0fe-2669-4365-a7fe-4c8232be1b08"}

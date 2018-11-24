@@ -132,5 +132,5 @@ alias aws2='ssh -i ~/.ssh/cuda_pair.pem -L 8888:localhost:8888 ubuntu@54.152.188
 
 # added by Miniconda3 installer
 export PATH="/home/yevgeniy/miniconda3/bin:$PATH"
-alias t='task -project_track -project_notes'
-
+#alias t='task -project_track -project_notes'
+alias t='task list +one_off'
