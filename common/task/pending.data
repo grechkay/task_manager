@@ -10,3 +10,5 @@
 [annotation_1543041432:"2018-11-23_0_ATG_Ch9" depends:"56db7235-cce7-4041-be2f-843232678686" description:"book_club" entry:"1543034375" full_name:"Asya and Yev's Book Club" modified:"1543096127" project:"book_club" status:"pending" tags:"main" uuid:"904a9e71-751c-4894-9949-f529603f3027"]
 [description:"review_gtd" entry:"1543035679" modified:"1543035679" project:"upkeep" status:"pending" tags:"one_off" uuid:"5f94a0fe-2669-4365-a7fe-4c8232be1b08"]
 [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543102327" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+[depends:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe" description:"mental" entry:"1543108586" modified:"1543108722" project:"mental" status:"pending" tags:"main" uuid:"32e60193-00a4-434a-bd20-91add73d4dad"]
+[description:"SDS" entry:"1543108699" modified:"1543108760" project:"SDS" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]

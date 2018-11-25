@@ -807,3 +807,17 @@ time 1543104035
 old [description:"add_timewarrior" entry:"1543034162" modified:"1543034162" project:"upkeep" status:"pending" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
 new [description:"add_timewarrior" end:"1543104035" entry:"1543034162" modified:"1543104035" project:"upkeep" status:"completed" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
 ---
+time 1543108586
+new [description:"mental" entry:"1543108586" modified:"1543108586" project:"mental" status:"pending" tags:"main" uuid:"32e60193-00a4-434a-bd20-91add73d4dad"]
+---
+time 1543108699
+new [description:"SDS project SDS" entry:"1543108699" modified:"1543108699" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]
+---
+time 1543108722
+old [description:"mental" entry:"1543108586" modified:"1543108586" project:"mental" status:"pending" tags:"main" uuid:"32e60193-00a4-434a-bd20-91add73d4dad"]
+new [depends:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe" description:"mental" entry:"1543108586" modified:"1543108722" project:"mental" status:"pending" tags:"main" uuid:"32e60193-00a4-434a-bd20-91add73d4dad"]
+---
+time 1543108760
+old [description:"SDS project SDS" entry:"1543108699" modified:"1543108699" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]
+new [description:"SDS" entry:"1543108699" modified:"1543108760" project:"SDS" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]
+---
