@@ -803,3 +803,7 @@ time 1543103672
 old [description:"fix_directory_note_integration" entry:"1543033903" modified:"1543033903" project:"upkeep" status:"pending" tags:"one_off" uuid:"a35cecd1-d1c1-4972-b63f-25a86e0be3a6"]
 new [description:"fix_directory_note_integration" end:"1543103672" entry:"1543033903" modified:"1543103672" project:"upkeep" status:"completed" tags:"one_off" uuid:"a35cecd1-d1c1-4972-b63f-25a86e0be3a6"]
 ---
+time 1543104035
+old [description:"add_timewarrior" entry:"1543034162" modified:"1543034162" project:"upkeep" status:"pending" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
+new [description:"add_timewarrior" end:"1543104035" entry:"1543034162" modified:"1543104035" project:"upkeep" status:"completed" tags:"one_off" uuid:"87ea1047-6b59-4d72-bab6-aae00867fea3"]
+---
