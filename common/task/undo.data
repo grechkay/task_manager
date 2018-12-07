@@ -821,3 +821,65 @@ time 1543108760
 old [description:"SDS project SDS" entry:"1543108699" modified:"1543108699" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]
 new [description:"SDS" entry:"1543108699" modified:"1543108760" project:"SDS" status:"pending" tags:"main" uuid:"143eaaa9-3dd1-45f4-a1fa-d813b8905fbe"]
 ---
+time 1543115326
+new [description:"HRT call" due:"1543219200" entry:"1543115326" modified:"1543115326" project:"upkeep" status:"pending" uuid:"671a3e5e-3f2d-468b-8a36-cf0df3253e08"]
+---
+time 1543115348
+old [description:"HRT call" due:"1543219200" entry:"1543115326" modified:"1543115326" project:"upkeep" status:"pending" uuid:"671a3e5e-3f2d-468b-8a36-cf0df3253e08"]
+new [description:"HRT call" due:"1543219200" entry:"1543115326" modified:"1543115348" project:"upkeep" status:"pending" tags:"one_off" uuid:"671a3e5e-3f2d-468b-8a36-cf0df3253e08"]
+---
+time 1543115414
+new [description:"AGYG book club meeting" due:"1543132800" entry:"1543115414" modified:"1543115414" project:"book_club" status:"pending" uuid:"b50ed37e-e5f8-4a83-a09f-c4fa899d6d06"]
+---
+time 1543115474
+old [description:"AGYG book club meeting" due:"1543132800" entry:"1543115414" modified:"1543115414" project:"book_club" status:"pending" uuid:"b50ed37e-e5f8-4a83-a09f-c4fa899d6d06"]
+new [description:"AGYG book club meeting" due:"1543132800" entry:"1543115414" modified:"1543115474" project:"upkeep" status:"pending" tags:"one_off" uuid:"b50ed37e-e5f8-4a83-a09f-c4fa899d6d06"]
+---
+time 1543119390
+old [description:"migrate_email_passwords_to_lastpass" entry:"1543033981" modified:"1543033981" project:"upkeep" status:"pending" tags:"one_off" uuid:"03d4af7f-4ba2-48c7-9f7a-26d34952c9ac"]
+new [description:"migrate_email_passwords_to_lastpass" end:"1543119390" entry:"1543033981" modified:"1543119390" project:"upkeep" status:"completed" tags:"one_off" uuid:"03d4af7f-4ba2-48c7-9f7a-26d34952c9ac"]
+---
+time 1543163958
+old [description:"AGYG book club meeting" due:"1543132800" entry:"1543115414" modified:"1543115474" project:"upkeep" status:"pending" tags:"one_off" uuid:"b50ed37e-e5f8-4a83-a09f-c4fa899d6d06"]
+new [description:"AGYG book club meeting" due:"1543132800" end:"1543163958" entry:"1543115414" modified:"1543163958" project:"upkeep" status:"completed" tags:"one_off" uuid:"b50ed37e-e5f8-4a83-a09f-c4fa899d6d06"]
+---
+time 1543294354
+new [description:"interview_prep" entry:"1543294354" modified:"1543294354" project:"interview_prep" status:"pending" tags:"main" uuid:"3fe190de-4f7e-4dcb-a5f5-6a60d28557b7"]
+---
+time 1543303866
+old [description:"interview_prep" entry:"1543294354" modified:"1543294354" project:"interview_prep" status:"pending" tags:"main" uuid:"3fe190de-4f7e-4dcb-a5f5-6a60d28557b7"]
+new [annotation_1543303866:"2018-11-26_0_day1" description:"interview_prep" entry:"1543294354" modified:"1543303866" project:"interview_prep" status:"pending" tags:"main" uuid:"3fe190de-4f7e-4dcb-a5f5-6a60d28557b7"]
+---
+time 1543339819
+new [description:"send_rent_check" due:"1543305600" entry:"1543339819" modified:"1543339819" project:"upkeep" status:"pending" tags:"one_off" uuid:"6cca395a-308b-44fc-9925-7d8c4fc216f9"]
+---
+time 1543339846
+old [description:"HRT call" due:"1543219200" entry:"1543115326" modified:"1543115348" project:"upkeep" status:"pending" tags:"one_off" uuid:"671a3e5e-3f2d-468b-8a36-cf0df3253e08"]
+new [description:"HRT call" due:"1543219200" end:"1543339846" entry:"1543115326" modified:"1543339846" project:"upkeep" status:"completed" tags:"one_off" uuid:"671a3e5e-3f2d-468b-8a36-cf0df3253e08"]
+---
+time 1543425935
+old [description:"send_rent_check" due:"1543305600" entry:"1543339819" modified:"1543339819" project:"upkeep" status:"pending" tags:"one_off" uuid:"6cca395a-308b-44fc-9925-7d8c4fc216f9"]
+new [description:"send_rent_check" due:"1543305600" end:"1543425935" entry:"1543339819" modified:"1543425935" project:"upkeep" status:"completed" tags:"one_off" uuid:"6cca395a-308b-44fc-9925-7d8c4fc216f9"]
+---
+time 1543507068
+new [description:"update bitbucket with book reviews and interview prep" entry:"1543507068" modified:"1543507068" project:"upkeep" status:"pending" tags:"one_off" uuid:"16c8ca70-6dee-4a4a-95d3-72d2d08d687c"]
+---
+time 1543733655
+old [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543102327" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543733655" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543739229
+old [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543733655" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" annotation_1543739229:"2018-12-01_1_ATG_Ch13" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543739229" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543766940
+old [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" annotation_1543739229:"2018-12-01_1_ATG_Ch13" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543739229" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" annotation_1543739229:"2018-12-01_1_ATG_Ch13" annotation_1543766940:"2018-12-02_0_ATG_Ch14" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543766940" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1543771340
+old [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" annotation_1543739229:"2018-12-01_1_ATG_Ch13" annotation_1543766940:"2018-12-02_0_ATG_Ch14" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543766940" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+new [annotation_1543102281:"2018-11-24_0_ATG_Ch9" annotation_1543102289:"2018-11-24_1_ATG_Ch10" annotation_1543102298:"2018-11-24_2_ATG_Ch11" annotation_1543733655:"2018-12-01_0_ATG_Ch12" annotation_1543739229:"2018-12-01_1_ATG_Ch13" annotation_1543766940:"2018-12-02_0_ATG_Ch14" annotation_1543771340:"2018-12-02_1_ATG_Ch15" description:"atg" entry:"1543088381" full_name:"Against The Gods" modified:"1543771340" parent_project:"book_club" project:"atg" status:"pending" tags:"main" uuid:"56db7235-cce7-4041-be2f-843232678686"]
+---
+time 1544122785
+new [description:"Modify tracking code; add tracking for MIN" entry:"1544122785" modified:"1544122785" project:"upkeep" status:"pending" tags:"one_off" uuid:"19b74099-aa0d-485c-813a-427a59981b9c"]
+---
