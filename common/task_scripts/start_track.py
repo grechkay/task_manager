@@ -14,14 +14,12 @@ if current_dir != '{}/core/common'.format(home_dir):
     raise ValueError('Wrong directory; switch to ~/core/common')
 
 track_target = sys.argv[1] #This is the target that is tracked
-track_value = sys.argv[2] #This is the value given to the tracked target
-
+min_value = sys.argv[2] #This is the min value of the tracked target (be conservative)
+max_value = sys.argv[3] #This is the max value of the tracked target
 
 all_track_targets = os.listdir('track_targets')
+if '{}.track'.format(track_target) in all_track_targets:
+    raise ValueError('tracking already exists')
 
-if '{}.track'.format(track_target) not in all_track_targets:
-    raise ValueError('Target is not tracked')
-
-with open('track_targets/{}.track'.format(track_target), 'a') as _in:
-    _in.write('{dt},{val}\n'.format(dt=current_ts, val=track_value))
-
+with open('track_targets/{}.track'.format(track_target), 'w') as _in:
+    _in.write('{min},{max}\n'.format(min=min_value, max=max_value))
