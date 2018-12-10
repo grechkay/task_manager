@@ -3,22 +3,22 @@ from subprocess import call
 from taskw import TaskWarrior
 from datetime import datetime
 from pathlib import Path
+from jsonpath import jsonpath
 
 # First argument is the project
 # Second argument is the title/description
 
 current_dir = os.getcwd()
 home_dir = str(Path.home())
+w = TaskWarrior()
+tasks = w.load_tasks()
 
 if current_dir != '{}/core/common'.format(home_dir):
     raise ValueError('Wrong directory; switch to ~/core/common')
 
 def get_task_id(project):
-    w = TaskWarrior()
-    tasks = w.load_tasks()['pending']
-    for task in tasks:
-        if task['project'] == project and 'main' in task['tags']:
-            return task['id']
+    project_id = jsonpath(tasks, "$..[?(@.description=='{project}')].id".format(project=project))
+    return project_id[0]
     
 project = sys.argv[1]
 description = sys.argv[2]
@@ -27,15 +27,19 @@ EDITOR = os.environ.get('EDITOR','vim')
 date = datetime.strftime(datetime.now(),'%Y-%m-%d')
 task_id = get_task_id(project)
 
-all_note_folders = os.listdir('project_notes')
-if project not in all_note_folders:
-    call(['mkdir', 'project_notes/{}'.format(project)])
+full_dir_path = '{project}/{month}'.format(project=project, month=date[:7])
+project_id = jsonpath(tasks, "$..[?(@.description=='{project}')].uuid".format(project=project))
+current_id = jsonpath(tasks, "$..[?(@.depends=='{}')].uuid".format(project_id[0]))
 
-all_months = os.listdir('project_notes/{}'.format(project))
-if date[:7] not in all_months:
-    call(['mkdir', 'project_notes/{0}/{1}'.format(project, date[:7])])
+while current_id:
+    parent_project = jsonpath(tasks, "$..[?(@.uuid=='{}')].description".format(current_id[0]))
+    full_dir_path = '{project}/{path}'.format(project=parent_project[0],path=full_dir_path)
+    current_id = jsonpath(tasks, "$..[?(@.depends=='{}')].uuid".format(current_id[0]))
 
-all_notes = os.listdir('project_notes/{0}/{1}'.format(project, date[:7]))
+full_dir_path = 'project_notes/{path}'.format(path=full_dir_path)
+call(['mkdir', '-p', full_dir_path])
+
+all_notes = os.listdir(full_dir_path)
 note_number = 0
 
 for note in all_notes:
@@ -47,11 +51,7 @@ note_name = '{date}_{num}_{desc}'.format(
         num=note_number,
         desc=description,
 )
-full_note_path = 'project_notes/{project}/{month}/{name}'.format(
-        project=project,
-        month=date[:7],
-        name=note_name,
-)
+full_note_path = '{path}/{name}'.format(path=full_dir_path, name=note_name)
 
 with open(full_note_path, 'w') as _in:
     _in.write(description)

@@ -946,3 +946,14 @@ time 1544399280
 old [annotation_1544287976:"https:\/\/stackoverflow.com\/questions\/35871379\/add-a-colorbar-to-a-calmap-plot\/38608168#38608168" description:"add legend to the trackers" entry:"1544287943" modified:"1544287976" project:"upkeep" status:"pending" tags:"one_off" uuid:"42e3cdec-6259-4de6-80ab-2d61ce4229fe"]
 new [annotation_1544287976:"https:\/\/stackoverflow.com\/questions\/35871379\/add-a-colorbar-to-a-calmap-plot\/38608168#38608168" description:"add legend to the trackers" end:"1544399280" entry:"1544287943" modified:"1544399280" project:"upkeep" status:"completed" tags:"one_off" uuid:"42e3cdec-6259-4de6-80ab-2d61ce4229fe"]
 ---
+time 1544399828
+new [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" entry:"1544399828" modified:"1544399828" status:"pending" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
+---
+time 1544399842
+old [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" entry:"1544399828" modified:"1544399828" status:"pending" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
+new [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" entry:"1544399828" modified:"1544399842" project:"upkeep" status:"pending" tags:"one_off" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
+---
+time 1544426517
+old [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" entry:"1544399828" modified:"1544399842" project:"upkeep" status:"pending" tags:"one_off" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
+new [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" end:"1544426517" entry:"1544399828" modified:"1544426517" project:"upkeep" status:"completed" tags:"one_off" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
+---
