@@ -47,7 +47,7 @@ for track_target in all_track_targets:
     cmaps.append(cmap_dict[cmap_dir.strip()])
 
 plt.style.use("dark_background")
-fig = plt.figure(figsize=(12,3 * len(titles)))
+fig = plt.figure(figsize=(12,3.1 * len(titles)))
 #fig.patch.set_facecolor('yellow')
 
 for i in range(len(titles)):
@@ -69,7 +69,7 @@ for i in range(len(titles)):
         ax=_ax,
         cmap=cmaps[i]
     )
-    _ax.set_title(titles[i], fontsize=25)
+    _ax.set_title(titles[i], fontsize=20)
     fig.colorbar(cax.get_children()[1], ax=cax, orientation='horizontal')
     
 

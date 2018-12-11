@@ -957,3 +957,40 @@ time 1544426517
 old [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" entry:"1544399828" modified:"1544399842" project:"upkeep" status:"pending" tags:"one_off" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
 new [description:"Modify the note taking mechanism so that projects with parents are put into the parent directory" end:"1544426517" entry:"1544399828" modified:"1544426517" project:"upkeep" status:"completed" tags:"one_off" uuid:"d6a7e138-c8a9-4dd1-9321-b808ebfca97b"]
 ---
+time 1544427540
+new [description:"Code cleanup: reformat your code to look nice and comment it" entry:"1544427540" modified:"1544427540" status:"pending" uuid:"d7064ce7-0e98-409c-b589-f661437db75f"]
+---
+time 1544427562
+old [description:"Code cleanup: reformat your code to look nice and comment it" entry:"1544427540" modified:"1544427540" status:"pending" uuid:"d7064ce7-0e98-409c-b589-f661437db75f"]
+new [description:"Code cleanup: reformat your code to look nice and comment it" entry:"1544427540" modified:"1544427562" project:"upkeep" status:"pending" tags:"one_off" uuid:"d7064ce7-0e98-409c-b589-f661437db75f"]
+---
+time 1544459698
+old [annotation_1543032412:"2018-11-23_0_first_note" description:"upkeep" entry:"1543030468" full_name:"Project to track your upkeep; this is both daily tasks and general self-improvement." modified:"1543096176" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+new [annotation_1543032412:"2018-11-23_0_first_note" annotation_1544459698:"2018-12-10_0_paris_trip" description:"upkeep" entry:"1543030468" full_name:"Project to track your upkeep; this is both daily tasks and general self-improvement." modified:"1544459698" project:"upkeep" status:"pending" tags:"main" uuid:"d61c6f97-cb45-4395-bc5e-9d81914d4b76"]
+---
+time 1544459953
+new [description:"1 hour per day on cleaning room" entry:"1544459953" modified:"1544459953" project:"upkeep" status:"pending" tags:"one_off" uuid:"7173178e-9882-4d4e-8df6-0df9fcd61e10"]
+---
+time 1544462623
+new [description:"haircut" entry:"1544462623" modified:"1544462623" project:"upkeep" status:"pending" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+---
+time 1544462636
+old [description:"haircut" entry:"1544462623" modified:"1544462623" project:"upkeep" status:"pending" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+new [description:"haircut" due:"1544947200" entry:"1544462623" modified:"1544462636" project:"upkeep" status:"pending" tags:"one_off" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+---
+time 1544462659
+old [description:"1 hour per day on cleaning room" entry:"1544459953" modified:"1544459953" project:"upkeep" status:"pending" tags:"one_off" uuid:"7173178e-9882-4d4e-8df6-0df9fcd61e10"]
+new [description:"1 hour per day on cleaning room" due:"1544947200" entry:"1544459953" modified:"1544462659" project:"upkeep" status:"pending" tags:"one_off" uuid:"7173178e-9882-4d4e-8df6-0df9fcd61e10"]
+---
+time 1544462694
+new [description:"send rent check; pay credit card bill" due:"1544947200" entry:"1544462694" modified:"1544462694" project:"upkeep" status:"pending" tags:"one_off" uuid:"2451c65e-46bb-42fb-aca4-dfc0f541835c"]
+---
+time 1544462842
+new [description:"figure out how the 'year' works on calplot" entry:"1544462842" modified:"1544462842" project:"upkeep" status:"pending" tags:"one_off" uuid:"61443b37-9194-44e7-8315-3f3eb933003e"]
+---
+time 1544463144
+new [description:"figure work\/spiritual\/repetitive task music out" entry:"1544463144" modified:"1544463144" project:"upkeep" status:"pending" tags:"one_off" uuid:"362e2eef-b4de-48c3-abbb-cc04fce0e5d7"]
+---
+time 1544463222
+new [description:"buy drano" entry:"1544463222" modified:"1544463222" project:"upkeep" status:"pending" tags:"one_off" uuid:"be10b63f-bd48-4420-97c5-9a561dfdc4b3"]
+---
