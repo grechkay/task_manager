@@ -1,0 +1,6 @@
+This is a project designed to complete the ML 'going private' prediction assignment.
+
+So far, I registered at www.alphavantage.co with an API key of: G2COV3N7I14YHSRJ
+
+I'm going to try to get some 'news data'; if possible I'll try to get some fundamentals data.
+It looks like I should be able to scrape seekingalpha news articles; I will do this after I get confirmation on what data is allowed and what data isn't allowed.
