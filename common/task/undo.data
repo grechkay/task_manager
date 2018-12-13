@@ -997,3 +997,19 @@ new [description:"buy drano" entry:"1544463222" modified:"1544463222" project:"u
 time 1544599415
 new [description:"point72" entry:"1544599415" modified:"1544599415" project:"point72" status:"pending" tags:"main" uuid:"9678c2ac-8b55-4590-8f1b-3d78f5a71768"]
 ---
+time 1544630982
+old [description:"haircut" due:"1544947200" entry:"1544462623" modified:"1544462636" project:"upkeep" status:"pending" tags:"one_off" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+new [description:"modify" due:"1548835200" entry:"1544462623" modified:"1544630982" project:"upkeep" status:"pending" tags:"one_off" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+---
+time 1544631006
+old [description:"modify" due:"1548835200" entry:"1544462623" modified:"1544630982" project:"upkeep" status:"pending" tags:"one_off" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+new [description:"haircut" due:"1548835200" entry:"1544462623" modified:"1544631006" project:"upkeep" status:"pending" tags:"one_off" uuid:"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"]
+---
+time 1544631019
+old [description:"buy drano" entry:"1544463222" modified:"1544463222" project:"upkeep" status:"pending" tags:"one_off" uuid:"be10b63f-bd48-4420-97c5-9a561dfdc4b3"]
+new [description:"buy drano" due:"1548835200" entry:"1544463222" modified:"1544631019" project:"upkeep" status:"pending" tags:"one_off" uuid:"be10b63f-bd48-4420-97c5-9a561dfdc4b3"]
+---
+time 1544631036
+old [description:"figure out how the 'year' works on calplot" entry:"1544462842" modified:"1544462842" project:"upkeep" status:"pending" tags:"one_off" uuid:"61443b37-9194-44e7-8315-3f3eb933003e"]
+new [description:"figure out how the 'year' works on calplot" due:"1548835200" entry:"1544462842" modified:"1544631036" project:"upkeep" status:"pending" tags:"one_off" uuid:"61443b37-9194-44e7-8315-3f3eb933003e"]
+---

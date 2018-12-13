@@ -263,3 +263,7 @@
 {"description":"figure work\/spiritual\/repetitive task music out","entry":"20181210T173224Z","modified":"20181210T173224Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"362e2eef-b4de-48c3-abbb-cc04fce0e5d7"}
 {"description":"buy drano","entry":"20181210T173342Z","modified":"20181210T173342Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"be10b63f-bd48-4420-97c5-9a561dfdc4b3"}
 {"description":"point72","entry":"20181212T072335Z","modified":"20181212T072335Z","project":"point72","status":"pending","tags":["main"],"uuid":"9678c2ac-8b55-4590-8f1b-3d78f5a71768"}
+{"description":"modify","due":"20190130T080000Z","entry":"20181210T172343Z","modified":"20181212T160942Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"}
+{"description":"haircut","due":"20190130T080000Z","entry":"20181210T172343Z","modified":"20181212T161006Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"52720ea1-62c2-4cf6-aed9-0b7c7d12e6bd"}
+{"description":"buy drano","due":"20190130T080000Z","entry":"20181210T173342Z","modified":"20181212T161019Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"be10b63f-bd48-4420-97c5-9a561dfdc4b3"}
+{"description":"figure out how the 'year' works on calplot","due":"20190130T080000Z","entry":"20181210T172722Z","modified":"20181212T161036Z","project":"upkeep","status":"pending","tags":["one_off"],"uuid":"61443b37-9194-44e7-8315-3f3eb933003e"}

@@ -4,3 +4,7 @@ So far, I registered at www.alphavantage.co with an API key of: G2COV3N7I14YHSRJ
 
 I'm going to try to get some 'news data'; if possible I'll try to get some fundamentals data.
 It looks like I should be able to scrape seekingalpha news articles; I will do this after I get confirmation on what data is allowed and what data isn't allowed.
+
+After clarification with point72, it turns out that I'm even allowed to use payed data. As such I'll probably get some kind of free trial fundamentals data.
+
+For tonight: try to scrape all of the data that you're planning to use; read the several papers that you have on the topic. Remember, the new basic task requirement is that you're in bed by 12, so don't waste time.

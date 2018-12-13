@@ -34,8 +34,7 @@ for track_target in all_track_targets:
         header=None,
         index_col=0
     )
-    df.index = pd.to_datetime(df.index.values * 1000000000)
-
+    df.index = pd.to_datetime(df.index.values, unit='s')
     titles.append(title)
     dfs.append(df)
     
@@ -48,7 +47,6 @@ for track_target in all_track_targets:
 
 plt.style.use("dark_background")
 fig = plt.figure(figsize=(12,3.1 * len(titles)))
-#fig.patch.set_facecolor('yellow')
 
 for i in range(len(titles)):
     _ax = fig.add_subplot(len(titles),1,i+1)
