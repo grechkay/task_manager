@@ -135,12 +135,12 @@ export PATH="/home/yevgeniy/miniconda3/bin:$PATH"
 #alias t='task -project_track -project_notes'
 alias t='task list +one_off'
 alias m='task list +main'
-alias tn='python ~/core/common/task_scripts/project_note.py'
-alias tr='python ~/core/common/task_scripts/project_readme.py'
-alias tm='python ~/core/common/task_scripts/project_min.py'
-alias track='python ~/core/common/task_scripts/track.py'
-alias status='python ~/core/common/task_scripts/trackplot.py'
-alias st='python ~/core/common/task_scripts/start_track.py'
+alias tn='python ~/core/task_scripts/project_note.py'
+alias tr='python ~/core/task_scripts/project_readme.py'
+alias tm='python ~/core/task_scripts/project_min.py'
+alias track='python ~/core/task_scripts/track.py'
+alias status='python ~/core/task_scripts/trackplot.py'
+alias st='python ~/core/task_scripts/start_track.py'
 
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
-
+gsettings set org.gnome.desktop.background picture-uri "file:///home/yevgeniy/core/common/status.png"
