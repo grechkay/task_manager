@@ -17,7 +17,7 @@ track_target = sys.argv[1] #This is the target that is tracked
 min_value = sys.argv[2] #This is the min value of the tracked target (be conservative)
 max_value = sys.argv[3] #This is the max value of the tracked target
 direction = sys.argv[4] #up/down signifies which direction you want improvement
-aggregator = sys.argv[5] #How the data should be aggregated
+aggregator = sys.argv[5] #How the data should be aggregated; There is a bug with sum; so use max.
 
 all_track_targets = os.listdir('personal/track_targets')
 if '{}.track'.format(track_target) in all_track_targets:
