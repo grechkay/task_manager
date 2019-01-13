@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 
-if current_dir != '{}/core/common'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core/common')
+if current_dir != '{}/core'.format(home_dir):
+    raise ValueError('Wrong directory; switch to ~/core')
 
-all_track_targets = os.listdir('track_targets')
+all_track_targets = os.listdir('personal/track_targets')
 
 cmap_dict = {
     'up': 'RdYlGn',
@@ -31,17 +31,25 @@ year = int(datetime.now().year)
 for track_target in all_track_targets:
     title = track_target.split('.')[0]
     df = pd.read_csv(
-        'track_targets/{}'.format(track_target),
+        'personal/track_targets/{}'.format(track_target),
         skiprows=1,
         header=None,
         index_col=0
     )
     df.index = pd.to_datetime(df.index.values, unit='s')
+    has_year = False
+    for dt in df.index.values:
+        dt_year = dt.astype('datetime64[Y]').astype(int) + 1970
+        if dt_year == year:
+            has_year = True
+            break
+    if not has_year:
+        continue
     titles.append(title)
     dfs.append(df)
-    
+        
 
-    with open('track_targets/{}'.format(track_target)) as f:
+    with open('personal/track_targets/{}'.format(track_target)) as f:
         first_line = f.readline()
     low, high, cmap_dir, aggregator = first_line.split(',')
     _range.append((float(low) - 0.1, float(high) + 0.1))
@@ -79,4 +87,4 @@ for i in range(len(titles)):
 
 
 plt.show()
-fig.savefig('status.png')
+fig.savefig('personal/status.png')

@@ -13,8 +13,8 @@ home_dir = str(Path.home())
 w = TaskWarrior()
 tasks = w.load_tasks()
 
-if current_dir != '{}/core/common'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core/common')
+if current_dir != '{}/core'.format(home_dir):
+    raise ValueError('Wrong directory; switch to ~/core')
 
 project = sys.argv[1]
 EDITOR = os.environ.get('EDITOR','vim')
@@ -28,7 +28,7 @@ while current_id:
     full_dir_path = '{project}/{path}'.format(project=parent_project[0],path=full_dir_path)
     current_id = jsonpath(tasks, "$..[?(@.depends=='{}')].uuid".format(current_id[0]))
 
-full_dir_path = 'project_notes/{path}'.format(path=full_dir_path)
+full_dir_path = 'personal/project_notes/{path}'.format(path=full_dir_path)
 
 call(['mkdir', '-p', full_dir_path])
 full_note_path = '{path}/README'.format(path=full_dir_path)

@@ -8,16 +8,16 @@ from pathlib import Path
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 
-if current_dir != '{}/core/common'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core/common')
+if current_dir != '{}/core'.format(home_dir):
+    raise ValueError('Wrong directory; switch to ~/core')
 
 EDITOR = os.environ.get('EDITOR','vim')
 
-all_note_folders = os.listdir('project_notes')
+all_note_folders = os.listdir('personal/project_notes')
 
-full_note_path = 'project_notes/MINIMUM'
+full_note_path = 'personal/project_notes/MINIMUM'
 
-if 'MINIMUM' in os.listdir('project_notes'):
+if 'MINIMUM' in os.listdir('personal/project_notes'):
     with open(full_note_path, 'r') as _in:
         call([EDITOR, _in.name])
 else:
