@@ -141,3 +141,6 @@ alias tm='python ~/core/common/task_scripts/project_min.py'
 alias track='python ~/core/common/task_scripts/track.py'
 alias status='python ~/core/common/task_scripts/trackplot.py'
 alias st='python ~/core/common/task_scripts/start_track.py'
+
+export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
+

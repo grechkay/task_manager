@@ -12,3 +12,8 @@ conda env create -f basenv.yml
 bash copy_rc.sh
 
 # Add copy scripts to copy .rc files
+
+mkdir ../personal
+mkdir ../personal/task
+mkdir ../personal/project_notes
+mkdir ../personal/track_targets
