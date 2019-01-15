@@ -28,6 +28,13 @@ cmaps = []
 aggregators = []
 year = int(datetime.now().year)
 
+####
+# This is a hack to get the timezone right.
+# When I move to a new location, I need to modify this code with the
+# right timezone.
+timedelta = -pd.Timedelta('08:00:00')
+####
+
 for track_target in all_track_targets:
     title = track_target.split('.')[0]
     df = pd.read_csv(
@@ -36,7 +43,7 @@ for track_target in all_track_targets:
         header=None,
         index_col=0
     )
-    df.index = pd.to_datetime(df.index.values, unit='s')
+    df.index = pd.to_datetime(df.index.values, unit='s') + timedelta
     has_year = False
     for dt in df.index.values:
         dt_year = dt.astype('datetime64[Y]').astype(int) + 1970
