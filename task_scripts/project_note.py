@@ -29,16 +29,16 @@ task_id = get_task_id(project)
 
 full_dir_path = '{project}/{month}'.format(project=project, month=date[:7])
 project_id = jsonpath(tasks, "$..[?(@.description=='{project}')].uuid".format(project=project))
-current_id = jsonpath(tasks, "$..[?(@.depends=='{}')].uuid".format(project_id[0]))
+current_id = jsonpath(tasks, "$..[?('{}' in @.depends)].uuid".format(project_id[0]))
 
 while current_id:
     parent_project = jsonpath(tasks, "$..[?(@.uuid=='{}')].description".format(current_id[0]))
     full_dir_path = '{project}/{path}'.format(project=parent_project[0],path=full_dir_path)
-    current_id = jsonpath(tasks, "$..[?(@.depends=='{}')].uuid".format(current_id[0]))
+    current_id = jsonpath(tasks, "$..[?('{}' in @.depends)].uuid".format(current_id[0]))
 
 full_dir_path = 'personal/project_notes/{path}'.format(path=full_dir_path)
 call(['mkdir', '-p', full_dir_path])
-
+print(full_dir_path)
 all_notes = os.listdir(full_dir_path)
 note_number = 0
 
