@@ -141,8 +141,9 @@ alias tm='python ~/core/task_scripts/project_min.py'
 alias track='python ~/core/task_scripts/track.py'
 alias status='python ~/core/task_scripts/trackplot.py'
 alias st='python ~/core/task_scripts/start_track.py'
+alias tt='python ~/core/task_scripts/temp_task.py'
 
 export TIMEWARRIORDB=~/core/personal/.timewarrior
 
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
-gsettings set org.gnome.desktop.background picture-uri "file:///home/yevgeniy/core/common/status.png"
+gsettings set org.gnome.desktop.background picture-uri "file:///home/yevgeniy/core/personal/status.png"
