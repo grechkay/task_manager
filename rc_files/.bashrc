@@ -143,6 +143,13 @@ alias status='python ~/core/task_scripts/trackplot.py'
 alias st='python ~/core/task_scripts/start_track.py'
 alias tt='python ~/core/task_scripts/temp_task.py'
 
+alias sleep='bash /home/yevgeniy/core/task_scripts/helper_scripts/sleep.sh'
+alias dw='bash /home/yevgeniy/core/task_scripts/helper_scripts/dw.sh'
+alias office='bash /home/yevgeniy/core/task_scripts/helper_scripts/office.sh'
+alias wokeup='bash /home/yevgeniy/core/task_scripts/helper_scripts/_sleep.sh'
+alias home='bash /home/yevgeniy/core/task_scripts/helper_scripts/_office.sh'
+alias finish='bash /home/yevgeniy/core/task_scripts/helper_scripts/_dw.sh'
+
 export TIMEWARRIORDB=~/core/personal/.timewarrior
 
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
