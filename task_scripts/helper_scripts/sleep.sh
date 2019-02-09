@@ -1,3 +1,4 @@
+read -rsp $'Press enter after floss/brush/leg workout \n' -n1 key
+read -rsp $'Press enter after you set goals for tomorrow \n' -n1 key
+
 timew start sleep
-echo "Don't forget to floss/brush/leg workout"
-echo "Don't forget to set goals for tomorrow"

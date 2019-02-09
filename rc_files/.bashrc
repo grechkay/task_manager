@@ -135,6 +135,7 @@ export PATH="/home/yevgeniy/miniconda3/bin:$PATH"
 #alias t='task -project_track -project_notes'
 alias t='task list +one_off'
 alias m='task list +main'
+alias g='python ~/core/task_scripts/goals.py'
 alias tn='python ~/core/task_scripts/project_note.py'
 alias tr='python ~/core/task_scripts/project_readme.py'
 alias tm='python ~/core/task_scripts/project_min.py'
@@ -142,6 +143,7 @@ alias track='python ~/core/task_scripts/track.py'
 alias status='python ~/core/task_scripts/trackplot.py'
 alias st='python ~/core/task_scripts/start_track.py'
 alias tt='python ~/core/task_scripts/temp_task.py'
+
 
 alias sleep='bash /home/yevgeniy/core/task_scripts/helper_scripts/sleep.sh'
 alias dw='bash /home/yevgeniy/core/task_scripts/helper_scripts/dw.sh'
