@@ -7,12 +7,14 @@ from datetime import datetime
 from datetime import date
 from collections import Counter
 from datetime import timedelta
+from project_manager import ProjectManager
 
 # First argument is the project
 
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 EDITOR = os.environ.get('EDITOR','vim')
+pm = ProjectManager()
 
 if current_dir != '{}/core'.format(home_dir):
     raise ValueError('Wrong directory; switch to ~/core')
@@ -84,11 +86,6 @@ if goal_timeframe == 'daily':
 else:
     goal_name = '{}_goal'.format(goal_timeframe)
 
-full_goal_path = '{_dir}/{name}'.format(
-    _dir=full_dir_path,
-    name=goal_name,
-)
-
 default_string = """min_goal:
 
 goal:
@@ -96,11 +93,9 @@ goal:
 stretch_goal:
 """
 
-if goal_name in os.listdir(full_dir_path):
-    with open(full_goal_path, 'r') as _in:
-        call([EDITOR, _in.name])
-else:
-    with open(full_goal_path, 'w') as _in:
-        _in.write(default_string)
-        _in.flush()
-        call([EDITOR, _in.name])
+pm.modify_file(
+    goal_name,
+    full_dir_path,
+    default_string,
+)
+
