@@ -102,7 +102,7 @@ class ProjectManager:
         )
         current_id = jsonpath(
             self.tasks, 
-            "$..[?(@.depends=='{}')].uuid".format(
+            "$..[?('{}' in @.depends)].uuid".format(
                 project_id[0]
             )
         )
@@ -117,7 +117,7 @@ class ProjectManager:
                 project=parent_project[0],path=full_dir_path
             )
             current_id = jsonpath(
-                self.tasks, "$..[?(@.depends=='{}')].uuid".format(
+                self.tasks, "$..[?('{}' in @.depends)].uuid".format(
                     current_id[0]
                 )
             )

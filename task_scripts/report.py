@@ -20,7 +20,7 @@ if current_dir != '{}/core'.format(home_dir):
     raise ValueError('Wrong directory; switch to ~/core')
 
 goal_date = sys.argv[1] #This is today's date
-goal_timeframe = sys.argv[2] 
+goal_timeframe = 'daily'
 #This is the timeline of the goal: 
 # y - year
 # q - quarter
@@ -86,20 +86,30 @@ if goal_timeframe == 'daily':
 else:
     goal_name = '{}_goal'.format(goal_timeframe)
 
-default_string = \
-"""
-prev_goal_evaluation:
+report_string = ""
 
-min_goal:
+files = os.listdir(full_dir_path)
+files = sorted(files)
 
-goal:
+underscore = '_'*80 + '\n'
+if files[-1] == 'weekly_goal':
+    report_string += 'weekly_goals\n\n'
+    file_path = '{}/{}'.format(full_dir_path, 'weekly_goal')
+    with open(file_path, 'r') as _in:
+        for line in _in:
+            report_string += line
 
-stretch_goal:
-"""
+    files.pop()
+    report_string += underscore
 
-pm.modify_file(
-    goal_name,
-    full_dir_path,
-    default_string,
-)
+for _file in files:
+    report_string += '{}\n\n'.format(_file)
+    file_path = '{}/{}'.format(full_dir_path, _file)
+    with open(file_path, 'r') as _in:
+        for line in _in:
+            report_string += line
 
+    report_string += underscore
+
+with open('personal/goal_report.txt','w') as _out:
+    _out.write(report_string)
