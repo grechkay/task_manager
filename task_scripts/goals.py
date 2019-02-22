@@ -88,7 +88,7 @@ else:
 
 default_string = \
 """
-prev_goal_evaluation:
+evaluation of the previous goals and context for the current goals:
 
 min_goal:
 
