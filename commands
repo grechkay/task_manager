@@ -1,6 +1,0 @@
-git add -u
-conda create --name basenv
-conda install nb_conda_kernels
-conda create --name SDS --clone basenv
-conda remove --name finance --all
-conda env create -f environment.yml
