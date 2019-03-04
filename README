@@ -37,3 +37,6 @@ python ~/core/task_scripts/track.py [target] [date] [value]
 python ~/core/task_scripts/trackplot.py [num_weeks]
 python ~/core/task_scripts/temp_task.py -> opens the temp task document
 python ~/core/task_scripts/report.py -> aggregated your goal documents into a weekly report
+
+
+It is recommended to create aliases for these commands.
