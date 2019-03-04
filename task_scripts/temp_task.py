@@ -7,17 +7,15 @@ from pathlib import Path
 
 current_dir = os.getcwd()
 home_dir = str(Path.home())
-
-if current_dir != '{}/core'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core')
+project_notes_path = '{}/core/personal/project_notes'.format(home_dir)
 
 EDITOR = os.environ.get('EDITOR','vim')
 
-all_note_folders = os.listdir('personal/project_notes')
+all_note_folders = os.listdir(project_notes_path)
 
-full_note_path = 'personal/project_notes/TEMPTASKDOC'
+full_note_path = '{}/core/personal/project_notes/TEMPTASKDOC'.format(home_dir)
 
-if 'TEMPTASKDOC' in os.listdir('personal/project_notes'):
+if 'TEMPTASKDOC' in os.listdir(project_notes_path):
     with open(full_note_path, 'r') as _in:
         call([EDITOR, _in.name])
 else:

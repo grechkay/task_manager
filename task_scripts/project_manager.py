@@ -7,14 +7,16 @@ from jsonpath import jsonpath
 
 class ProjectManager:
     def __init__(self):
-        self.directory_check()
+        #self.directory_check()
 
         self.EDITOR = os.environ.get('EDITOR', 'vim')
         self.w = TaskWarrior()
         self.tasks = self.w.load_tasks()
+        self.home_dir = str(Path.home())
+        self.personal_dir = '{}/core/personal'.format(self.home_dir)
 
     def project_min(self):
-        filedir = 'personal/project_notes'
+        filedir = '{}/project_notes'.format(self.personal_dir)
         filename = 'MINIMUM'
 
         self.modify_file(
@@ -122,8 +124,10 @@ class ProjectManager:
                 )
             )
 
-        full_dir_path = 'personal/project_notes/{path}'.format(
-            path=full_dir_path)
+        full_dir_path = '{personal_dir}/project_notes/{path}'.format(
+            personal_dir=self.personal_dir,
+            path=full_dir_path
+        )
         call(['mkdir', '-p', full_dir_path])
         return full_dir_path
 

@@ -13,11 +13,9 @@ import numpy as np
 
 current_dir = os.getcwd()
 home_dir = str(Path.home())
+track_targets_path = '{}/core/personal/track_targets'.format(home_dir)
 
-if current_dir != '{}/core'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core')
-
-all_track_targets = os.listdir('personal/track_targets')
+all_track_targets = os.listdir(track_targets_path)
 
 cmap_dict = {
     'up': 'RdYlGn',
@@ -58,7 +56,7 @@ for i in range(days_offset+1):
 for track_target in all_track_targets:
     title = track_target.split('.')[0]
     df = pd.read_csv(
-        'personal/track_targets/{}'.format(track_target),
+        '{}/{}'.format(track_targets_path, track_target),
         skiprows=1,
         header=None,
         index_col=0
@@ -66,16 +64,17 @@ for track_target in all_track_targets:
     df = df.loc[df.index >= first_day,:]
     if df.shape[0] > 0:
         titles.append(title)
-        dfs.append(df)
-        
+                
 
-        with open('personal/track_targets/{}'.format(track_target)) as f:
+        with open('{}/{}'.format(track_targets_path, track_target)) as f:
             first_line = f.readline()
         low, high, cmap_dir, aggregator = first_line.split(',')
-        _range.append((float(low) - 0.1, float(high) + 0.1))
+        _range.append((float(low) - 1, float(high) + 1))
         cmaps.append(cmap_dict[cmap_dir.strip()])
         aggregators.append(aggregator.strip())
+        dfs.append(df)
 
+ 
 plt.style.use("dark_background")
 x_tick_labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 fig = plt.figure(figsize=(30 ,5 * len(titles)))
@@ -94,6 +93,9 @@ for i in range(len(titles)):
     status_array = np.array(status_array).reshape(nrows, 7)
 
     data = dfs[i].groupby(by=lambda x:x).agg(aggregators[i])
+    data.iloc[:,0] = np.maximum(data.iloc[:,0].values.astype('float'), minrange)
+    data.iloc[:,0] = np.minimum(data.iloc[:,0].values.astype('float'), maxrange)
+
     zipped_data = zip(data.index.values, data[1].values)
     
     for date, val in zipped_data:
@@ -114,4 +116,4 @@ for i in range(len(titles)):
 
 plt.tight_layout(pad=10, w_pad=10, h_pad=10)
 plt.show()
-fig.savefig('personal/status.png')
+fig.savefig('{}/core/personal/status.png'.format(home_dir))

@@ -13,11 +13,9 @@ from project_manager import ProjectManager
 
 current_dir = os.getcwd()
 home_dir = str(Path.home())
+personal_dir = '{}/core/personal'.format(home_dir)
 EDITOR = os.environ.get('EDITOR','vim')
 pm = ProjectManager()
-
-if current_dir != '{}/core'.format(home_dir):
-    raise ValueError('Wrong directory; switch to ~/core')
 
 goal_date = sys.argv[1] #This is today's date
 goal_timeframe = 'daily'
@@ -76,7 +74,7 @@ path_additions = {
     3:'m{}'.format(str(month)),
     4:'w{}'.format(str(week)),
 }
-full_dir_path = 'personal/goals'
+full_dir_path = '{}/goals'.format(personal_dir)
 for i in range(1,timeframe_number + 1):
     full_dir_path += '/{}'.format(path_additions[i])
 
@@ -111,5 +109,5 @@ for _file in files:
 
     report_string += underscore
 
-with open('personal/goal_report.txt','w') as _out:
+with open('{}/goal_report.txt'.format(personal_dir),'w') as _out:
     _out.write(report_string)
