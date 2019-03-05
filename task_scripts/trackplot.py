@@ -77,12 +77,12 @@ for track_target in all_track_targets:
  
 plt.style.use("dark_background")
 x_tick_labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-fig = plt.figure(figsize=(30 ,5 * len(titles)))
+fig = plt.figure(figsize=(40 , 30))
 
 for i in range(len(titles)):
     minrange = _range[i][0]
     maxrange = _range[i][1]
-    _ax = fig.add_subplot(len(titles),4 , i + 1)
+    _ax = fig.add_subplot(len(titles)//4+2 ,4 , i + 1)
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
