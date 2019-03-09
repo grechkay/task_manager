@@ -86,13 +86,15 @@ else:
 
 default_string = \
 """
-evaluation of the previous goals and context for the current goals:
+context for the goals:
 
 min_goal:
 
 goal:
 
 stretch_goal:
+
+evaluation of the goals:
 """
 
 pm.modify_file(
