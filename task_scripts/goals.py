@@ -53,6 +53,14 @@ def check_num_mondays(d1, d2):
             num_mondays += 1
     return num_mondays
 
+def get_first_monday(year):
+    first_day = date(year, 1, 1)
+    temp_date = first_day
+    while temp_date.strftime('%a') != 'Mon':
+        temp_date += day_delta
+
+    return temp_date
+
 num_mondays = check_num_mondays(date_from, date_to)
 
 if num_mondays == 0:
@@ -65,8 +73,12 @@ if num_mondays == 0:
     week = last_year_mondays
 else:
     quarter = min((num_mondays-1) // 13 + 1, 4)
-    month = min((num_mondays-1) // 4 + 1, 12) 
+    month = min((num_mondays-1) // 4 + 1, 13) 
     week = num_mondays
+
+year_start = get_first_monday(year)
+year_end = get_first_monday(year+1) - day_delta
+n_weeks = (year_end - year_start).days // 7
 
 path_additions = {
     1:str(year),
@@ -82,7 +94,7 @@ call(['mkdir', '-p', full_dir_path])
 if goal_timeframe == 'daily':
     goal_name = goal_date
 else:
-    goal_name = '{}_goal'.format(goal_timeframe)
+    goal_name = '{}_goal_{}--{}'.format(goal_timeframe, start_day, end_day)
 
 default_string = \
 """
