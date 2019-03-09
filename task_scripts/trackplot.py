@@ -22,20 +22,12 @@ cmap_dict = {
     'down': 'RdYlGn_r'
 }
 
-def get_color_map(original):
-    default = cm.get_cmap(original, 256)
-    newcolors = default(np.linspace(0, 1, 256))
-    black = np.array([0,0,0,1])
-    newcolors[:1,:] = black
-    newcmp = ListedColormap(newcolors)
-    return newcmp
-    
-
 titles = []
 dfs = []
 _range = []
 cmaps = []
 aggregators = []
+units = []
 
 today = datetime.now().date()
 day_delta = timedelta(days=1)
@@ -68,10 +60,11 @@ for track_target in all_track_targets:
 
         with open('{}/{}'.format(track_targets_path, track_target)) as f:
             first_line = f.readline()
-        low, high, cmap_dir, aggregator = first_line.split(',')
-        _range.append((float(low) - 1, float(high) + 1))
+        low, high, cmap_dir, aggregator, unit = first_line.split(',')
+        _range.append((float(low) - 0.1, float(high) + 0.1))
         cmaps.append(cmap_dict[cmap_dir.strip()])
         aggregators.append(aggregator.strip())
+        units.append(unit)
         dfs.append(df)
 
  
@@ -89,30 +82,27 @@ for i in range(len(titles)):
     _ax.set_xticklabels(x_tick_labels, ha='left')
     nrows = days_offset // 7 + 1
 
-    status_array = [_range[i][0] - 0.2] * nrows * 7
+    status_array = [np.nan] * nrows * 7
     status_array = np.array(status_array).reshape(nrows, 7)
 
     data = dfs[i].groupby(by=lambda x:x).agg(aggregators[i])
-    data.iloc[:,0] = np.maximum(data.iloc[:,0].values.astype('float'), minrange)
-    data.iloc[:,0] = np.minimum(data.iloc[:,0].values.astype('float'), maxrange)
-
     zipped_data = zip(data.index.values, data[1].values)
     
     for date, val in zipped_data:
         idx = day_to_idx[date]
         status_array[nrows - 1 - idx // 7, idx % 7] = val
 
-    newcmp = get_color_map(cmaps[i])
     pcm = _ax.pcolormesh(
         status_array, 
         edgecolors='grey', 
         linewidths=4,
-        cmap=newcmp,
+        cmap=cmaps[i],
         vmin=minrange, 
         vmax=maxrange
     )
 
-    fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap=newcmp)
+    cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap=cmaps[i])
+    cbar.set_label(units[i], size=15, color='lightgray')
 
 plt.tight_layout(pad=10, w_pad=10, h_pad=10)
 plt.show()
