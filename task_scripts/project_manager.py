@@ -25,18 +25,6 @@ class ProjectManager:
         )
 
 
-    def project_readme(
-        self,
-        project,
-    ):
-        filedir = self.get_full_dir_path(project)
-        filename = 'README'
-
-        self.modify_file(
-            filename,
-            filedir,
-        )
-
     def project_note(
         self,
         project,
@@ -51,37 +39,6 @@ class ProjectManager:
             filename,
         )
 
-    def _project_note(
-        self,
-        project,
-        description,
-    ):
-        date = datetime.strftime(
-            datetime.now(),
-            '%Y-%m-%d',
-        )
-        task_id = self.get_task_id(project)
-        filedir = self.get_full_dir_path(
-            project,
-            date[:7],
-        )
-        note_number = 0
-        all_notes = os.listdir(filedir)
-        for note in all_notes:
-            if date == note[:10]:
-                note_number += 1
-
-        note_name = '{date}_{num}_{desc}'.format(
-            date=date,
-            num=note_number,
-            desc=description,
-        )
-        self.create_file(
-            note_name,
-            filedir,
-            description,
-        )
-        call(['task', str(task_id), 'annotate', note_name])
 
     def get_task_id(
         self,
@@ -180,13 +137,3 @@ class ProjectManager:
                 filedir,
                 defaulttext,
             )
-
-
-    def directory_check(
-        self,
-    ):
-        current_dir = os.getcwd()
-        home_dir = str(Path.home())
-
-        if current_dir != '{}/core'.format(home_dir):
-            raise ValueError('Wrong directory; switch to ~/core')
