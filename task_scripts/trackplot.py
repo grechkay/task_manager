@@ -46,7 +46,7 @@ temp_day = today - day_delta * days_offset
 special_track_targets = OrderedDict({
     'weekly_goals': [None, week_multiplier, 50, 10, 'week'],
     'monthly_goals': [None, 12, 20, 5, 'month'],
-    'quarterly_goals': [None, 4, 10, 5, 'quarter'],
+    'quarterly_goals': [None, 4, 15, 5, 'quarter'],
     'yearly_goals': [None, 0, 10, 5, 'year'],
 })
 
@@ -126,13 +126,13 @@ for i in range(len(titles)):
 
 for c, item in enumerate(special_track_targets.items()):
     k,v = item
-    if v[0] is not None:
-        df, multiplier, size, n_cols, primary = v
-        status_array = [np.nan] * size
+    df, multiplier, size, n_cols, primary = v
+    status_array = [np.nan] * size
 
+    if df is not None:
         data = df.groupby(by=lambda x:x).mean()
         zipped_data = zip(data.index.values, data[1].values)
- 
+
         today_idx = iso_info['year'] * multiplier + iso_info[primary] - 1
         for ds,val in zipped_data:
             dt = datetime.strptime(ds, '%Y-%m-%d')
@@ -144,26 +144,26 @@ for c, item in enumerate(special_track_targets.items()):
                 continue
             status_array[local_idx - today_idx] = val
 
-        _status_array = np.array(status_array).reshape(size // n_cols, n_cols)
-        status_array = np.zeros(_status_array.shape)
-        for i in range(_status_array.shape[0]):
-            status_array[i] = _status_array[size // n_cols - i - 1]
+    _status_array = np.array(status_array).reshape(size // n_cols, n_cols)
+    status_array = np.zeros(_status_array.shape)
+    for i in range(_status_array.shape[0]):
+        status_array[i] = _status_array[size // n_cols - i - 1]
 
-        _ax = fig.add_subplot(len(titles)//4+3 ,4 , (len(titles) // 4 + 2)*4 + c + 1)
-        _ax.get_xaxis().set_visible(False)
-        _ax.get_yaxis().set_visible(False)
-        _ax.set_title(k, fontsize=20)
-        pcm = _ax.pcolormesh(
-            status_array, 
-            edgecolors='grey', 
-            linewidths=4,
-            cmap='RdYlGn',
-            vmin=-0.1, 
-            vmax=10.1
-        )
+    _ax = fig.add_subplot(len(titles)//4+3 ,4 , (len(titles) // 4 + 2)*4 + c + 1)
+    _ax.get_xaxis().set_visible(False)
+    _ax.get_yaxis().set_visible(False)
+    _ax.set_title(k, fontsize=20)
+    pcm = _ax.pcolormesh(
+        status_array, 
+        edgecolors='grey', 
+        linewidths=4,
+        cmap='RdYlGn',
+        vmin=-0.1, 
+        vmax=10.1
+    )
 
-        cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap='RdYlGn')
-        cbar.set_label('points', size=15, color='lightgray')
+    cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap='RdYlGn')
+    cbar.set_label('points', size=15, color='lightgray')
 
 
 
