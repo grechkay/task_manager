@@ -11,6 +11,7 @@ from datetime import timedelta
 import numpy as np
 from collections import OrderedDict
 from iso_info import get_iso_info
+import math
 # First argument is the project
 
 current_dir = os.getcwd()
@@ -96,7 +97,7 @@ fig = plt.figure(figsize=(80 , 60))
 for i in range(len(titles)):
     minrange = _range[i][0]
     maxrange = _range[i][1]
-    _ax = fig.add_subplot(len(titles)//plot_width+2 ,plot_width , i + 1)
+    _ax = fig.add_subplot(math.ceil(len(titles)/plot_width)+2 ,plot_width , i + 1)
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
@@ -150,7 +151,7 @@ for c, item in enumerate(special_track_targets.items()):
     for i in range(_status_array.shape[0]):
         status_array[i] = _status_array[size // n_cols - i - 1]
 
-    _ax = fig.add_subplot(len(titles)//plot_width+2 ,plot_width , (len(titles) // plot_width + 1)*plot_width + c + 1)
+    _ax = fig.add_subplot(math.ceil(len(titles)/plot_width)+2 ,plot_width , (math.ceil(len(titles) / plot_width) + 1)*plot_width + c + 1)
     _ax.get_xaxis().set_visible(False)
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(k, fontsize=20)
@@ -169,5 +170,6 @@ for c, item in enumerate(special_track_targets.items()):
 
 
 plt.tight_layout(pad=10, w_pad=10, h_pad=10)
+plt.subplots_adjust(hspace=.3)
 plt.show()
 fig.savefig('{}/core/personal/status.png'.format(home_dir))
