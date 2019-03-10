@@ -37,8 +37,21 @@ class ProjectManager:
             filedir,
         )
 
-
     def project_note(
+        self,
+        project,
+        description,
+    ):
+        filedir = self.get_full_dir_path(project)
+        filename = description
+
+        self.modify_file(
+            filename,
+            filedir,
+            filename,
+        )
+
+    def _project_note(
         self,
         project,
         description,
