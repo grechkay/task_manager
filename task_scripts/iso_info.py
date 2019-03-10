@@ -131,28 +131,29 @@ def test(Y, M, D):
     print("week end:", result_dict["week_end"].date())
     print("----------------------------")
 
-# test
-Y = 2019
-M = 3
-D = 10
-test(Y, M, D)
+if __name__ == '__main__':
+    # test
+    Y = 2019
+    M = 3
+    D = 10
+    test(Y, M, D)
 
-Y = 2019
-M = 12
-D = 31
-test(Y, M, D)
+    Y = 2019
+    M = 12
+    D = 31
+    test(Y, M, D)
 
-Y = 2019
-M = 4
-D = 29
-test(Y, M, D)
+    Y = 2019
+    M = 4
+    D = 29
+    test(Y, M, D)
 
-Y = 2019
-M = 9
-D = 1
-test(Y, M, D)
+    Y = 2019
+    M = 9
+    D = 1
+    test(Y, M, D)
 
-Y = 2020
-M = 9
-D = 28
-test(Y, M, D)
+    Y = 2020
+    M = 9
+    D = 28
+    test(Y, M, D)
