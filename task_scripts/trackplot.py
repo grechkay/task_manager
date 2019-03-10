@@ -9,6 +9,8 @@ from matplotlib import cm
 from matplotlib.colors import ListedColormap
 from datetime import timedelta
 import numpy as np
+from collections import OrderedDict
+from iso_info import get_iso_info
 # First argument is the project
 
 current_dir = os.getcwd()
@@ -29,10 +31,24 @@ cmaps = []
 aggregators = []
 units = []
 
-today = datetime.now().date()
+
+now = datetime.now()
+today = now.date()
+iso_info = get_iso_info(now)
+year = iso_info['year']
+last_year_last_date = get_iso_info(datetime(year-1,6,1))['year_end']
+week_multiplier = get_iso_info(last_year_last_date)['week']
+
 day_delta = timedelta(days=1)
 days_offset = 0
 temp_day = today - day_delta * days_offset
+
+special_track_targets = OrderedDict({
+    'weekly_goals': [None, week_multiplier, 50, 10, 'week'],
+    'monthly_goals': [None, 12, 20, 5, 'month'],
+    'quarterly_goals': [None, 4, 10, 5, 'quarter'],
+    'yearly_goals': [None, 0, 10, 5, 'year'],
+})
 
 while temp_day.strftime('%a') != 'Mon':
     days_offset += 1
@@ -53,6 +69,10 @@ for track_target in all_track_targets:
         header=None,
         index_col=0
     )
+    if title in special_track_targets:
+        special_track_targets[title][0] = df
+        continue
+ 
     df = df.loc[df.index >= first_day,:]
     if df.shape[0] > 0:
         titles.append(title)
@@ -75,7 +95,7 @@ fig = plt.figure(figsize=(40 , 30))
 for i in range(len(titles)):
     minrange = _range[i][0]
     maxrange = _range[i][1]
-    _ax = fig.add_subplot(len(titles)//4+2 ,4 , i + 1)
+    _ax = fig.add_subplot(len(titles)//4+3 ,4 , i + 1)
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
@@ -103,6 +123,49 @@ for i in range(len(titles)):
 
     cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap=cmaps[i])
     cbar.set_label(units[i], size=15, color='lightgray')
+
+for c, item in enumerate(special_track_targets.items()):
+    k,v = item
+    if v[0] is not None:
+        df, multiplier, size, n_cols, primary = v
+        status_array = [np.nan] * size
+
+        data = df.groupby(by=lambda x:x).mean()
+        zipped_data = zip(data.index.values, data[1].values)
+ 
+        today_idx = iso_info['year'] * multiplier + iso_info[primary] - 1
+        for ds,val in zipped_data:
+            dt = datetime.strptime(ds, '%Y-%m-%d')
+            local_iso = get_iso_info(dt)
+            local_idx = local_iso['year'] * multiplier + local_iso[primary] - 1
+            if local_idx == today_idx:
+                continue
+            if today_idx - local_idx > size:
+                continue
+            status_array[local_idx - today_idx] = val
+
+        _status_array = np.array(status_array).reshape(size // n_cols, n_cols)
+        status_array = np.zeros(_status_array.shape)
+        for i in range(_status_array.shape[0]):
+            status_array[i] = _status_array[size // n_cols - i - 1]
+
+        _ax = fig.add_subplot(len(titles)//4+3 ,4 , (len(titles) // 4 + 2)*4 + c + 1)
+        _ax.get_xaxis().set_visible(False)
+        _ax.get_yaxis().set_visible(False)
+        _ax.set_title(k, fontsize=20)
+        pcm = _ax.pcolormesh(
+            status_array, 
+            edgecolors='grey', 
+            linewidths=4,
+            cmap='RdYlGn',
+            vmin=-0.1, 
+            vmax=10.1
+        )
+
+        cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap='RdYlGn')
+        cbar.set_label('points', size=15, color='lightgray')
+
+
 
 plt.tight_layout(pad=10, w_pad=10, h_pad=10)
 plt.show()
