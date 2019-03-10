@@ -19,6 +19,7 @@ track_targets_path = '{}/core/personal/track_targets'.format(home_dir)
 
 all_track_targets = os.listdir(track_targets_path)
 
+plot_width = 5
 cmap_dict = {
     'up': 'RdYlGn',
     'down': 'RdYlGn_r'
@@ -44,7 +45,7 @@ days_offset = 0
 temp_day = today - day_delta * days_offset
 
 special_track_targets = OrderedDict({
-    'weekly_goals': [None, week_multiplier, 50, 10, 'week'],
+    'weekly_goals': [None, week_multiplier, 25, 5, 'week'],
     'monthly_goals': [None, 12, 20, 5, 'month'],
     'quarterly_goals': [None, 4, 15, 5, 'quarter'],
     'yearly_goals': [None, 0, 10, 5, 'year'],
@@ -95,7 +96,7 @@ fig = plt.figure(figsize=(40 , 30))
 for i in range(len(titles)):
     minrange = _range[i][0]
     maxrange = _range[i][1]
-    _ax = fig.add_subplot(len(titles)//4+3 ,4 , i + 1)
+    _ax = fig.add_subplot(len(titles)//plot_width+3 ,plot_width , i + 1)
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
@@ -149,7 +150,7 @@ for c, item in enumerate(special_track_targets.items()):
     for i in range(_status_array.shape[0]):
         status_array[i] = _status_array[size // n_cols - i - 1]
 
-    _ax = fig.add_subplot(len(titles)//4+3 ,4 , (len(titles) // 4 + 2)*4 + c + 1)
+    _ax = fig.add_subplot(len(titles)//plot_width+3 ,plot_width , (len(titles) // plot_width + 2)*plot_width + c + 1)
     _ax.get_xaxis().set_visible(False)
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(k, fontsize=20)
