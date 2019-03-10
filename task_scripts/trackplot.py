@@ -91,12 +91,12 @@ for track_target in all_track_targets:
  
 plt.style.use("dark_background")
 x_tick_labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-fig = plt.figure(figsize=(40 , 30))
+fig = plt.figure(figsize=(80 , 60))
 
 for i in range(len(titles)):
     minrange = _range[i][0]
     maxrange = _range[i][1]
-    _ax = fig.add_subplot(len(titles)//plot_width+3 ,plot_width , i + 1)
+    _ax = fig.add_subplot(len(titles)//plot_width+2 ,plot_width , i + 1)
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
@@ -150,7 +150,7 @@ for c, item in enumerate(special_track_targets.items()):
     for i in range(_status_array.shape[0]):
         status_array[i] = _status_array[size // n_cols - i - 1]
 
-    _ax = fig.add_subplot(len(titles)//plot_width+3 ,plot_width , (len(titles) // plot_width + 2)*plot_width + c + 1)
+    _ax = fig.add_subplot(len(titles)//plot_width+2 ,plot_width , (len(titles) // plot_width + 1)*plot_width + c + 1)
     _ax.get_xaxis().set_visible(False)
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(k, fontsize=20)
