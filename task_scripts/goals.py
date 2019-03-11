@@ -70,11 +70,13 @@ default_string = \
 """
 context for the goals:
 
+
 min_goal:
 
 goal:
 
 stretch_goal:
+
 
 evaluation of the goals:
 """

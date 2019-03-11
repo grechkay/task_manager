@@ -134,17 +134,23 @@ for c, item in enumerate(special_track_targets.items()):
     if df is not None:
         data = df.groupby(by=lambda x:x).mean()
         zipped_data = zip(data.index.values, data[1].values)
+        period_end = iso_info['{}_end'.format(primary)].date()
 
         today_idx = iso_info['year'] * multiplier + iso_info[primary] - 1
         for ds,val in zipped_data:
             dt = datetime.strptime(ds, '%Y-%m-%d')
             local_iso = get_iso_info(dt)
             local_idx = local_iso['year'] * multiplier + local_iso[primary] - 1
-            if local_idx == today_idx:
-                continue
-            if today_idx - local_idx > size:
-                continue
-            status_array[local_idx - today_idx] = val
+            if period_end == today:
+                if today_idx - local_idx > size - 1:
+                    continue
+                status_array[local_idx - today_idx - 1] = val
+            else:
+                if local_idx == today_idx:
+                    continue
+                if today_idx - local_idx > size:
+                    continue
+                status_array[local_idx - today_idx] = val
 
     _status_array = np.array(status_array).reshape(size // n_cols, n_cols)
     status_array = np.zeros(_status_array.shape)
