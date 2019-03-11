@@ -20,7 +20,7 @@ track_targets_path = '{}/core/personal/track_targets'.format(home_dir)
 
 all_track_targets = os.listdir(track_targets_path)
 
-plot_width = 5
+plot_width = 6
 cmap_dict = {
     'up': 'RdYlGn',
     'down': 'RdYlGn_r'
