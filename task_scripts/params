@@ -1,9 +1,0 @@
-{
-	"EDITOR": "subl",
-	"alias": 
-	{
-		"track": "python ~/core/task_scripts/track.py",
-		"goals": "python ~/core/task_scripts/goals.py",
-		"pushpersonal": "cd ~/core/personal; git add *; git commit -m 'updated goals'; git push"
-	}
-}
