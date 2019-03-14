@@ -12,11 +12,18 @@ from iso_info import get_iso_info
 
 # First argument is the project
 
+def show_error():
+    print("\n\n\t\033[91mError. please execute \n\tpython goals.py [YYYY-MM-DD] [daily,weekly,quarterly,yearly]\n")
+    print("\033[0m")
+    assert False
+
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 personal_dir = '{}/core/personal'.format(home_dir)
-EDITOR = os.environ.get('EDITOR','vim')
 pm = ProjectManager()
+
+if len(sys.argv) != 3:
+    show_error()
 
 goal_date = sys.argv[1] #This is today's date
 goal_timeframe = sys.argv[2] 
@@ -30,7 +37,19 @@ goal_timeframe = sys.argv[2]
 # Everything will be based on the week, so the overlapping 
 # days may be put into different quarters/months/years
 
-dt = datetime.strptime(goal_date, '%Y-%m-%d')
+if goal_date == 't': # today
+    dt = datetime.now()
+elif goal_date == 'y': # yesterday
+    dt = datetime.now() - timedelta(days=1)
+elif goal_date == 'tom': # tomorrow
+    dt = datetime.now() + timedelta(dats=1)
+else:
+    try:
+        dt = datetime.strptime(goal_date, '%Y-%m-%d')
+    except ValueError:
+        show_error()
+goal_date = dt.strftime('%Y-%m-%d') # this will get the good format so even if user types '2019-3-14' it still works
+
 iso_info = get_iso_info(dt)
 
 timeframe_dict = {
@@ -40,6 +59,8 @@ timeframe_dict = {
     'weekly':4,
     'daily':4,
 }
+if goal_timeframe not in timeframe_dict:
+    show_error()
 timeframe_number = timeframe_dict[goal_timeframe]
 
 year = iso_info['year']

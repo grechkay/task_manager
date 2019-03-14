@@ -4,15 +4,14 @@ from taskw import TaskWarrior
 from datetime import datetime
 from pathlib import Path
 from jsonpath import jsonpath
+import os
 
 class ProjectManager:
     def __init__(self):
-        #self.directory_check()
-
+        self.home_dir = str(Path.home())
         self.EDITOR = os.environ.get('EDITOR', 'vim')
         self.w = TaskWarrior()
         self.tasks = self.w.load_tasks()
-        self.home_dir = str(Path.home())
         self.personal_dir = '{}/core/personal'.format(self.home_dir)
 
     def project_min(self):

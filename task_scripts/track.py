@@ -6,14 +6,34 @@ from pathlib import Path
 
 # First argument is the project
 
+def show_error():
+    print("\n\n\t\033[91mError. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]\n")
+    print("\033[0m")
+    assert False
+
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 track_path = '{}/core/personal'.format(home_dir)
+
+if len(sys.argv) != 4:
+    show_error()
 
 track_target = sys.argv[1] #This is the target that is tracked
 track_date = sys.argv[2] #This is the ds in the format: YYYY-MM-DD
 track_value = sys.argv[3] #This is the value given to the tracked target
 
+if track_date == 't': # today
+    dt = datetime.now()
+elif track_date == 'y': # yesterday
+    dt = datetime.now() - timedelta(days=1)
+elif track_date == 'tom': # tomorrow
+    dt = datetime.now() + timedelta(dats=1)
+else:
+    try:
+        dt = datetime.strptime(track_date, '%Y-%m-%d')
+    except ValueError:
+        show_error()
+track_date = dt.strftime('%Y-%m-%d') # this will get the good format so even if user types '2019-3-14' it still works
 
 all_track_targets = os.listdir('{}/track_targets'.format(track_path))
 
