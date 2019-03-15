@@ -14,6 +14,16 @@ def show_error():
 current_dir = os.getcwd()
 home_dir = str(Path.home())
 track_path = '{}/core/personal'.format(home_dir)
+all_track_targets = os.listdir('{}/track_targets'.format(track_path))
+
+if len(sys.argv) == 1:
+	# show the track targets
+	print("\nCurrent track targets:")
+	for t in all_track_targets:
+		print("\t" + t[: -len('.track')]) # so that the '.track' doesn't appear
+	print()
+	sys.exit()
+
 
 if len(sys.argv) != 4:
     show_error()
@@ -35,7 +45,7 @@ else:
         show_error()
 track_date = dt.strftime('%Y-%m-%d') # this will get the good format so even if user types '2019-3-14' it still works
 
-all_track_targets = os.listdir('{}/track_targets'.format(track_path))
+
 
 if '{}.track'.format(track_target) not in all_track_targets:
     raise ValueError('Target is not tracked')

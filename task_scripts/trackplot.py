@@ -89,7 +89,6 @@ for track_target in all_track_targets:
         units.append(unit)
         dfs.append(df)
 
- 
 plt.style.use("dark_background")
 x_tick_labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 fig = plt.figure(figsize=(80 , 60))
@@ -101,7 +100,8 @@ for i in range(len(titles)):
 
     _ax.get_yaxis().set_visible(False)
     _ax.set_title(titles[i], fontsize=20)
-    _ax.set_xticklabels(x_tick_labels, ha='left')
+    #_ax.set_xticklabels(x_tick_labels, ha='left')
+    _ax.xaxis.set(ticks=np.arange(0.5, 8, 1), ticklabels=x_tick_labels)
     nrows = days_offset // 7 + 1
 
     status_array = [np.nan] * nrows * 7
