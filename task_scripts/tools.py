@@ -1,26 +1,59 @@
 from datetime import datetime, timedelta
 from collections import Counter
 
-'''
-get_iso_info takes a datetime object and returns a dictionary with the following keys:
--"year": int
--"year_start": datetime object
--"year_end": datetime ojbect
--"quarter": int (between 1 and 4)
--"quarter_start": datetime object
--"quarter_end": datetime object
--"month": int (between 1 and 12)
--"month_start": datetime object
--"month_end": datetime object
--"week": int (between 1 and 53)
--"week_start": datetime object
--"week_end": datetime object
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
-Note: Called get_iso_info because the ISO calendar is EXACTLY what we are looking for. 
-See here for more info: https://www.staff.science.uu.nl/~gent0113/calendar/isocalendar.htm
-'''
+def raise_fail_error(message):
+    raise ValueError(bcolors.FAIL + "\n\n\t" + message + bcolors.ENDC + "\n")
+
+def get_date_from_string(track_date):
+    '''
+    :param track_date: A string of a date in the form of YYYY-MM-DD or [t, y, tom] for today, yesterday tomorrow
+    :return: The resulting string of date (useful if input was [t, y, tom] and a datetime date object
+    '''
+    if track_date == 't':  # today
+        dt = datetime.now()
+    elif track_date == 'y':  # yesterday
+        dt = datetime.now() - timedelta(days=1)
+    elif track_date == 'tom':  # tomorrow
+        dt = datetime.now() + timedelta(days=1)
+    else:
+        try:
+            dt = datetime.strptime(track_date, '%Y-%m-%d')
+        except ValueError:
+            raise_fail_error("Error. Date is not in the correct format YYYY-MM-DD (or [t, y, tom])")
+    track_date = dt.strftime('%Y-%m-%d')  # this will get the good format so even if user types '2019-3-14' it still works
+    return track_date, dt
+
 
 def get_iso_info(mydate): # my date is a datetime object
+    '''
+    :param mydate: a datetime object
+    :return: a dictionary with the following keys:
+    -"year": int
+    -"year_start": datetime object
+    -"year_end": datetime ojbect
+    -"quarter": int (between 1 and 4)
+    -"quarter_start": datetime object
+    -"quarter_end": datetime object
+    -"month": int (between 1 and 12)
+    -"month_start": datetime object
+    -"month_end": datetime object
+    -"week": int (between 1 and 53)
+    -"week_start": datetime object
+    -"week_end": datetime object
+
+    Note: Called get_iso_info because the ISO calendar is EXACTLY what we are looking for.
+    See here for more info: https://www.staff.science.uu.nl/~gent0113/calendar/isocalendar.htm
+    '''
     # get iso calendar
     iso_year, iso_week, iso_day = mydate.isocalendar()
 
@@ -81,7 +114,7 @@ def get_iso_info(mydate): # my date is a datetime object
     quarters = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 
 
-    iso_quarter = (iso_month - 1) // 3 + 1
+    iso_quarter = (iso_month - 1) // 3 + 1 # will be 1, 2, 3 or 4
     # now, get the START of the iso_quarter
     start_month_quarter = quarters[iso_quarter - 1][0]
     end_month_quarter = quarters[iso_quarter - 1][-1]
@@ -109,7 +142,7 @@ def get_iso_info(mydate): # my date is a datetime object
 
 
 
-def test(Y, M, D):
+def test_iso(Y, M, D):
     date = datetime(year=Y, month=M, day=D)
     result_dict = get_iso_info(date)
     print("date", date.date())
@@ -131,29 +164,4 @@ def test(Y, M, D):
     print("week end:", result_dict["week_end"].date())
     print("----------------------------")
 
-if __name__ == '__main__':
-    # test
-    Y = 2019
-    M = 3
-    D = 10
-    test(Y, M, D)
 
-    Y = 2019
-    M = 12
-    D = 31
-    test(Y, M, D)
-
-    Y = 2019
-    M = 4
-    D = 29
-    test(Y, M, D)
-
-    Y = 2019
-    M = 9
-    D = 1
-    test(Y, M, D)
-
-    Y = 2020
-    M = 9
-    D = 28
-    test(Y, M, D)

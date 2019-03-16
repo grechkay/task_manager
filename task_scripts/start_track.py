@@ -1,33 +1,36 @@
-import sys, tempfile, os
-from subprocess import call
-from taskw import TaskWarrior
-from datetime import datetime
+import os
 from pathlib import Path
+import argparse
+from tools import raise_fail_error
 
-# First argument is the project
+def main(track_target, min_value, max_value, direction, aggregator, units):
+    if direction not in ['up', 'down']:
+        raise_fail_error("Error. Direction must be in [up, down]. For more info:\n\tpython start_track.py -h")
+    if aggregator not in ['mean', 'sum', 'max', 'min']:
+        raise_fail_error("Error. Aggregator must be in [mean, sum, max, min]. For more info:\n\tpython start_track.py -h")
+    home_dir = str(Path.home())
+    track_targets_dir = '{}/core/personal/track_targets'.format(home_dir)
 
-current_dir = os.getcwd()
-home_dir = str(Path.home())
-track_targets_dir = '{}/core/personal/track_targets'.format(home_dir)
-current_ts = int(datetime.now().timestamp())
+    all_track_targets = os.listdir(track_targets_dir)
+    if '{}.track'.format(track_target) in all_track_targets:
+        raise_fail_error("Error. Tracking already exists")
 
+    with open('{}/{}.track'.format(track_targets_dir, track_target), 'w') as _in:
+        _in.write('{min},{max},{dir},{agg},{units}\n'.format(
+            min=min_value,
+            max=max_value,
+            dir=direction,
+            agg=aggregator,
+            units=units,
+        ))
 
-track_target = sys.argv[1] #This is the target that is tracked
-min_value = sys.argv[2] #This is the min value of the tracked target (be conservative)
-max_value = sys.argv[3] #This is the max value of the tracked target
-direction = sys.argv[4] #up/down signifies which direction you want improvement
-aggregator = sys.argv[5] #How the data should be aggregated.
-units = sys.argv[6] #Units that your data is tracked in.
-
-all_track_targets = os.listdir(track_targets_dir)
-if '{}.track'.format(track_target) in all_track_targets:
-    raise ValueError('tracking already exists')
-
-with open('{}/{}.track'.format(track_targets_dir, track_target), 'w') as _in:
-    _in.write('{min},{max},{dir},{agg},{units}\n'.format(
-        min=min_value, 
-        max=max_value,
-        dir=direction,
-        agg=aggregator,
-        units=units,
-    ))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('track_target', type=str, help='name of target to add to track')
+    parser.add_argument('min_value', type=str, help='the min value user wants to assign to be graphically displayed')
+    parser.add_argument('max_value', type=str, help='the max value user wants to assign to be graphically displayed')
+    parser.add_argument('direction', type=str, help='values: [up, down]. signifies which direction implies improvement')
+    parser.add_argument('aggregator', type=str, help='how the data should be aggregated. values: [mean, sum, max, min]')
+    parser.add_argument('units', type=str, help='units data values are tracked in')
+    args = parser.parse_args()
+    main(args.track_target, args.min_value, args.max_value, args.direction, args.aggregator, args.units)

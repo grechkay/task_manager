@@ -1,55 +1,36 @@
-import sys, tempfile, os
-from subprocess import call
-from taskw import TaskWarrior
-from datetime import datetime
+import os
 from pathlib import Path
+import argparse
+from tools import get_date_from_string, bcolors, raise_fail_error
 
-# First argument is the project
+def main(track_target, track_date, track_value):
+    home_dir = str(Path.home())
+    track_path = '{}/core/personal'.format(home_dir)
+    all_track_targets = os.listdir('{}/track_targets'.format(track_path))
 
-def show_error():
-    print("\n\n\t\033[91mError. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]\n")
-    print("\033[0m")
-    assert False
+    if not track_target and not track_date and not track_value:
+        print("\nCurrent track targets:")
+        for t in all_track_targets:
+            print(bcolors.BOLD + bcolors.OKBLUE + '\t' + t[: -len('.track')] + bcolors.ENDC)  # so that the '.track' doesn't appear
+        print()
+        return
+    elif not track_target or not track_date or not track_value:
+        raise_fail_error("Error. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]")
 
-current_dir = os.getcwd()
-home_dir = str(Path.home())
-track_path = '{}/core/personal'.format(home_dir)
-all_track_targets = os.listdir('{}/track_targets'.format(track_path))
+    track_date, dt = get_date_from_string(track_date)
 
-if len(sys.argv) == 1:
-	# show the track targets
-	print("\nCurrent track targets:")
-	for t in all_track_targets:
-		print("\t" + t[: -len('.track')]) # so that the '.track' doesn't appear
-	print()
-	sys.exit()
+    if '{}.track'.format(track_target) not in all_track_targets:
+        raise_fail_error("Error. Target is not tracked.")
 
-
-if len(sys.argv) != 4:
-    show_error()
-
-track_target = sys.argv[1] #This is the target that is tracked
-track_date = sys.argv[2] #This is the ds in the format: YYYY-MM-DD
-track_value = sys.argv[3] #This is the value given to the tracked target
-
-if track_date == 't': # today
-    dt = datetime.now()
-elif track_date == 'y': # yesterday
-    dt = datetime.now() - timedelta(days=1)
-elif track_date == 'tom': # tomorrow
-    dt = datetime.now() + timedelta(dats=1)
-else:
-    try:
-        dt = datetime.strptime(track_date, '%Y-%m-%d')
-    except ValueError:
-        show_error()
-track_date = dt.strftime('%Y-%m-%d') # this will get the good format so even if user types '2019-3-14' it still works
+    with open('{}/track_targets/{}.track'.format(track_path, track_target), 'a') as _in:
+        _in.write('{ds},{val}\n'.format(ds=track_date, val=track_value))
 
 
-
-if '{}.track'.format(track_target) not in all_track_targets:
-    raise ValueError('Target is not tracked')
-
-with open('{}/track_targets/{}.track'.format(track_path, track_target), 'a') as _in:
-    _in.write('{ds},{val}\n'.format(ds=track_date, val=track_value))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(epilog="To view the targets you currently have, call this function without arguments.\n\n")
+    parser.add_argument('target_name', type=str,  nargs='?', help='name of target to track')
+    parser.add_argument('date', type=str, nargs='?', help='possible values: [t, y, tom, YYYY-MM-DD] (for today, yesterday, tomorrow or a precise date)')
+    parser.add_argument('value', type=str, nargs='?', help='value given to the target.')
+    args = parser.parse_args()
+    main(args.target_name, args.date, args.value)
 
