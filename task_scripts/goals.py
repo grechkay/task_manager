@@ -53,17 +53,17 @@ def main(goal_date, goal_timeframe):
 
     default_string = \
     """
-    context for the goals:
-    
-    
-    min_goal:
-    
-    goal:
-    
-    stretch_goal:
-    
-    
-    evaluation of the goals:
+context for the goals:
+
+
+min_goal:
+
+goal:
+
+stretch_goal:
+
+
+evaluation of the goals:
     """
 
     pm.modify_file(
