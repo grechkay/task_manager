@@ -1,15 +1,16 @@
 import os
-from pathlib import Path
 import argparse
 from tools import raise_fail_error
+from project_manager import ProjectManager
 
 def main(track_target, min_value, max_value, direction, aggregator, units):
     if direction not in ['up', 'down']:
         raise_fail_error("Error. Direction must be in [up, down]. For more info:\n\tpython start_track.py -h")
     if aggregator not in ['mean', 'sum', 'max', 'min']:
         raise_fail_error("Error. Aggregator must be in [mean, sum, max, min]. For more info:\n\tpython start_track.py -h")
-    home_dir = str(Path.home())
-    track_targets_dir = '{}/core/personal/track_targets'.format(home_dir)
+    pm = ProjectManager()
+    personal_dir = pm.personal_dir
+    track_targets_dir = '{}/track_targets'.format(personal_dir)
 
     all_track_targets = os.listdir(track_targets_dir)
     if '{}.track'.format(track_target) in all_track_targets:

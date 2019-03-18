@@ -1,12 +1,11 @@
 import os
-from pathlib import Path
 from tools import get_iso_info, get_date_from_string
 import argparse
-
+from project_manager import ProjectManager
 
 def main(goal_date):
-    home_dir = str(Path.home())
-    personal_dir = '{}/core/personal'.format(home_dir)
+    pm = ProjectManager()
+    personal_dir = pm.personal_dir
 
     goal_date, dt = get_date_from_string(goal_date)
     iso_info = get_iso_info(dt)

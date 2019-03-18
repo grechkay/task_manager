@@ -1,14 +1,12 @@
 from subprocess import call
-from pathlib import Path
 from project_manager import ProjectManager
 import argparse
 from tools import get_date_from_string, get_iso_info, raise_fail_error
 
 
 def main(goal_date, goal_timeframe):
-    home_dir = str(Path.home())
-    personal_dir = '{}/core/personal'.format(home_dir)
     pm = ProjectManager()
+    personal_dir = pm.personal_dir
 
     # Everything will be based on the week, so the overlapping
     # days may be put into different quarters/months/years

@@ -1,6 +1,5 @@
 import os
 from datetime import datetime
-from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import timedelta
@@ -9,10 +8,12 @@ from collections import OrderedDict
 from tools import get_iso_info
 import math
 import argparse
+from project_manager import ProjectManager
 
 def main(num_weeks, to_show):
-    home_dir = str(Path.home())
-    track_targets_path = '{}/core/personal/track_targets'.format(home_dir)
+    pm = ProjectManager()
+    personal_dir = pm.personal_dir
+    track_targets_path = '{}/track_targets'.format(personal_dir)
 
     all_track_targets = os.listdir(track_targets_path)
 
@@ -173,16 +174,14 @@ def main(num_weeks, to_show):
 
     if to_show:
         plt.show()
-    else:
-        plt.pause(0.1)
 
-    fig.savefig('{}/core/personal/status.png'.format(home_dir))
+    fig.savefig('{}/status.png'.format(personal_dir))
     plt.close(fig)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('nb_weeks', type=int, nargs='?', default=4, help='number of weeks to track back')
-    parser.add_argument('to_show', type=str, nargs='?', default='True', help='option to show or just save figure. Defaults to True. ')
+    parser.add_argument('-s', '--show', type=str, default='True', help='option to show or just save figure. Defaults to True. ')
     args = parser.parse_args()
-    to_show = args.to_show not in ['False', 'false', 'FALSE', 'f', 'F', '0', 'no', 'n', 'N', 'NO']
+    to_show = args.show not in ['False', 'false', 'FALSE', 'f', 'F', '0', 'no', 'n', 'N', 'NO']
     main(args.nb_weeks, to_show)

@@ -15,7 +15,5 @@
 
 # Add copy scripts to copy .rc files
 
-mkdir ../personal
-mkdir ../personal/task
-mkdir ../personal/project_notes
-mkdir ../personal/track_targets
+# call create_dirs script
+./create_dirs.sh

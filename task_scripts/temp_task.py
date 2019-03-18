@@ -1,19 +1,15 @@
-import sys, tempfile, os
+import os
 from subprocess import call
-from taskw import TaskWarrior
-from datetime import datetime
-from pathlib import Path
+from project_manager import ProjectManager
 
-
-current_dir = os.getcwd()
-home_dir = str(Path.home())
-project_notes_path = '{}/core/personal/project_notes'.format(home_dir)
-
-EDITOR = os.environ.get('EDITOR','vim')
+pm = ProjectManager()
+personal_dir = pm.personal_dir
+project_notes_path = '{}/project_notes'.format(personal_dir)
+EDITOR = pm.EDITOR
 
 all_note_folders = os.listdir(project_notes_path)
 
-full_note_path = '{}/core/personal/project_notes/TEMPTASKDOC'.format(home_dir)
+full_note_path = '{}/TEMPTASKDOC'.format(project_notes_path)
 
 if 'TEMPTASKDOC' in os.listdir(project_notes_path):
     with open(full_note_path, 'r') as _in:

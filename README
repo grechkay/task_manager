@@ -29,7 +29,7 @@ various reports about them.
 
 The following is the functionality of this project:
 python ~/core/task_scripts/goals.py [YYYY-MM-DD] [timeline] -> timelines are: daily/weekly/monthly/quarterly/yearly
-python ~/core/task_scripts/project_note.py [project] [note_name] -> Opens a note for the given project (projects are specifided in the taskwarrior with the tag main, and they are given the same value for 'project' and 'description' field)
+python ~/core/task_scripts/project_note.py [project] [note_name] -> Opens a note for the given project (projects are specified in the taskwarrior with the tag main, and they are given the same value for 'project' and 'description' field)
 python ~/core/task_scripts/project_readme.py [project] -> opens the readme file for the project
 python ~/core/task_scripts/project_min.py -> Opens your minimum daily task document
 python ~/core/task_scripts/start_track.py [target] [min] [max] [up/down] [aggregation] (usual aggregation: mean/sum)

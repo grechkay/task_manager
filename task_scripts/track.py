@@ -1,11 +1,11 @@
 import os
-from pathlib import Path
 import argparse
 from tools import get_date_from_string, bcolors, raise_fail_error
+from project_manager import ProjectManager
 
 def main(track_target, track_date, track_value):
-    home_dir = str(Path.home())
-    track_path = '{}/core/personal'.format(home_dir)
+    pm = ProjectManager()
+    track_path = pm.personal_dir
     all_track_targets = os.listdir('{}/track_targets'.format(track_path))
 
     if not track_target and not track_date and not track_value:

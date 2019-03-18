@@ -1,7 +1,5 @@
-import sys, tempfile, os
 from subprocess import call
 from taskw import TaskWarrior
-from datetime import datetime
 from pathlib import Path
 from jsonpath import jsonpath
 import os
@@ -10,9 +8,10 @@ class ProjectManager:
     def __init__(self):
         self.home_dir = str(Path.home())
         self.EDITOR = os.environ.get('EDITOR', 'vim')
+        PERSONAL_FOLDER = os.environ.get('PERSONAL_DIRECTORY', 'personal')
         self.w = TaskWarrior()
         self.tasks = self.w.load_tasks()
-        self.personal_dir = '{}/core/personal'.format(self.home_dir)
+        self.personal_dir = '{}/core/{}'.format(self.home_dir, PERSONAL_FOLDER)
 
     def project_min(self):
         filedir = '{}/project_notes'.format(self.personal_dir)
