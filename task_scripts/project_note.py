@@ -1,16 +1,22 @@
 import sys
 from project_manager import ProjectManager
+import argparse
 
 # First argument is the project
 # Second argument is the title/description
 
-pm = ProjectManager()
+def main(project, description):
+	pm = ProjectManager()
 
-project = sys.argv[1]
-description = sys.argv[2]
+	pm.project_note(
+	    project,
+	    description,
+	)
 
-pm.project_note(
-    project,
-    description,
-)
 
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser()
+	parser.add_argument('project', type=str, help='name of project (as is defined in TaskWarrior)')
+	parser.add_argument('description', type=str, help='note description (can be anything)')
+	args = parser.parse_args()
+	main(args.project, args.description)

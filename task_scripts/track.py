@@ -2,17 +2,45 @@ import os
 import argparse
 from tools import get_date_from_string, bcolors, raise_fail_error
 from project_manager import ProjectManager
+import pandas as pd
+from datetime import datetime
+
+def show_tracks_for_date(track_date, all_track_targets, track_targets_path):
+    for t in all_track_targets:
+        df = pd.read_csv(
+            '{}/{}'.format(track_targets_path, t),
+            skiprows=1,
+            header=None,
+            index_col=0
+        )
+        # count entries for date
+        counts = df.groupby(0).aggregate('count')
+        try:
+            nb_tracked = counts.loc[track_date].values[0]
+            print(bcolors.BOLD + bcolors.OKBLUE, end='')
+        except KeyError:
+            nb_tracked = 0
+            print(bcolors.ENDC + bcolors.BOLD, end='')
+        print('\t' + t[: -len('.track')] + ' : ' + str(nb_tracked) + bcolors.ENDC)  # so that the '.track' doesn't appear
+    print()
 
 def main(track_target, track_date, track_value):
     pm = ProjectManager()
     track_path = pm.personal_dir
-    all_track_targets = os.listdir('{}/track_targets'.format(track_path))
+    track_targets_path = '{}/track_targets'.format(track_path)
+    all_track_targets = os.listdir(track_targets_path)
 
+     # today
     if not track_target and not track_date and not track_value:
-        print("\nCurrent track targets:")
-        for t in all_track_targets:
-            print(bcolors.BOLD + bcolors.OKBLUE + '\t' + t[: -len('.track')] + bcolors.ENDC)  # so that the '.track' doesn't appear
-        print()
+        print("\nCurrent track targets for today :")
+        today = datetime.now().strftime('%Y-%m-%d')
+        show_tracks_for_date(today, all_track_targets, track_targets_path)
+        return
+    elif track_target and not track_date and not track_value:
+        # let's see if track_target is actually the date!
+        track_date, dt = get_date_from_string(track_target)
+        print("\nCurrent track targets for {}".format(track_date))
+        show_tracks_for_date(track_date, all_track_targets, track_targets_path)
         return
     elif not track_target or not track_date or not track_value:
         raise_fail_error("Error. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]")
