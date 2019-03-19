@@ -7,21 +7,37 @@ from datetime import datetime
 
 def show_tracks_for_date(track_date, all_track_targets, track_targets_path):
     for t in all_track_targets:
-        df = pd.read_csv(
-            '{}/{}'.format(track_targets_path, t),
-            skiprows=1,
-            header=None,
-            index_col=0
-        )
-        # count entries for date
-        counts = df.groupby(0).aggregate('count')
-        try:
-            nb_tracked = counts.loc[track_date].values[0]
-            print(bcolors.BOLD + bcolors.OKBLUE, end='')
-        except KeyError:
+
+        try: # try to read the csv file
+            df = pd.read_csv(
+                '{}/{}'.format(track_targets_path, t),
+                skiprows=1,
+                header=None,
+                index_col=0
+            )
+            read_csv = True
+        except:
+            read_csv = False
             nb_tracked = 0
             print(bcolors.ENDC + bcolors.BOLD, end='')
-        print('\t' + t[: -len('.track')] + ' : ' + str(nb_tracked) + bcolors.ENDC)  # so that the '.track' doesn't appear
+
+        if read_csv:
+            # count entries for date
+            counts = df.groupby(0).aggregate('count')
+            try:
+                nb_tracked = counts.loc[track_date].values[0]
+                print(bcolors.BOLD + bcolors.OKBLUE, end='')
+            except KeyError:
+                nb_tracked = 0
+                print(bcolors.ENDC + bcolors.BOLD, end='')
+
+        # get first line to see the min, max values
+        with open('{}/{}'.format(track_targets_path, t)) as f:
+            first_line = f.readline()
+        low, high, cmap_dir, aggregator, unit = first_line.split(',')
+        text = str(nb_tracked) + bcolors.ENDC + " (" + low + "," + high + ")"
+
+        print('\t' + t[: -len('.track')] + ' : \t' + text + bcolors.ENDC)  # so that the '.track' doesn't appear
     print()
 
 def main(track_target, track_date, track_value):

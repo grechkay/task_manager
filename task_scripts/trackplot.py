@@ -62,12 +62,15 @@ def main(num_weeks, to_show):
 
     for track_target in all_track_targets:
         title = track_target.split('.')[0]
-        df = pd.read_csv(
-            '{}/{}'.format(track_targets_path, track_target),
-            skiprows=1,
-            header=None,
-            index_col=0
-        )
+        try:
+            df = pd.read_csv(
+                '{}/{}'.format(track_targets_path, track_target),
+                skiprows=1,
+                header=None,
+                index_col=0
+            )
+        except:
+            continue # only show tracked targets
         if title in special_track_targets:
             special_track_targets[title][0] = df
             continue
