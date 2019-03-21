@@ -8,4 +8,6 @@ if [ "$#" -ne 1 ]; then
 fi
 export PERSONAL_DIRECTORY=$1
 export TASKDATA=~/core/$PERSONAL_DIRECTORY/task
-echo "Switched personal directory to: $1"
+echo ""
+echo "--------> Switched personal directory to: $1"
+echo ""
