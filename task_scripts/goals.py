@@ -50,8 +50,7 @@ def main(goal_date, goal_timeframe):
         goal_name = '{}_goal_{}--{}'.format(goal_timeframe, start_day.date(), end_day.date())
 
     default_string = \
-    """
-context for the goals:
+"""context for the goals:
 
 
 min_goal:
@@ -61,8 +60,7 @@ goal:
 stretch_goal:
 
 
-evaluation of the goals:
-    """
+evaluation of the goals:"""
 
     pm.modify_file(
         goal_name,
