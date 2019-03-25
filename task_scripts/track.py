@@ -40,25 +40,25 @@ def show_tracks_for_date(track_date, all_track_targets, track_targets_path):
         print('\t' + t[: -len('.track')] + ' : \t' + text + bcolors.ENDC)  # so that the '.track' doesn't appear
     print()
 
-def main(track_target, track_date, track_value):
+def main(track_date, track_target, track_value):
     pm = ProjectManager()
     track_path = pm.personal_dir
     track_targets_path = '{}/track_targets'.format(track_path)
     all_track_targets = os.listdir(track_targets_path)
 
      # today
-    if not track_target and not track_date and not track_value:
+    if not track_target and not track_date and not track_value: # user just called track.py with no arguments --> show targets for today
         print("\nCurrent track targets for today :")
         today = datetime.now().strftime('%Y-%m-%d')
         show_tracks_for_date(today, all_track_targets, track_targets_path)
         return
-    elif track_target and not track_date and not track_value:
+    elif track_date and not track_target and not track_value: # user provided a date but nothing else
         # let's see if track_target is actually the date!
-        track_date, dt = get_date_from_string(track_target)
+        track_date, dt = get_date_from_string(track_date)
         print("\nCurrent track targets for {}".format(track_date))
         show_tracks_for_date(track_date, all_track_targets, track_targets_path)
         return
-    elif not track_target or not track_date or not track_value:
+    elif not track_target or not track_date or not track_value: # user forgot 1 argument
         raise_fail_error("Error. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]")
 
     track_date, dt = get_date_from_string(track_date)
@@ -72,9 +72,9 @@ def main(track_target, track_date, track_value):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(epilog="To view the targets you currently have, call this function without arguments.\n\n")
-    parser.add_argument('target_name', type=str,  nargs='?', help='name of target to track')
     parser.add_argument('date', type=str, nargs='?', help='possible values: [t, y, tom, YYYY-MM-DD] (for today, yesterday, tomorrow or a precise date)')
+    parser.add_argument('target_name', type=str,  nargs='?', help='name of target to track')
     parser.add_argument('value', type=str, nargs='?', help='value given to the target.')
     args = parser.parse_args()
-    main(args.target_name, args.date, args.value)
+    main(args.date, args.target_name, args.value)
 
