@@ -59,7 +59,7 @@ def main(track_date, track_target, track_value):
         show_tracks_for_date(track_date, all_track_targets, track_targets_path)
         return
     elif not track_target or not track_date or not track_value: # user forgot 1 argument
-        raise_fail_error("Error. please execute \n\tpython goals.py [target] [YYYY-MM-DD] [value]")
+        raise_fail_error("Error. please execute \n\tpython track.py [YYYY-MM-DD] [target] [value]")
 
     track_date, dt = get_date_from_string(track_date)
 

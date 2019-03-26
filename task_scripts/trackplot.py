@@ -10,7 +10,13 @@ import math
 import argparse
 from project_manager import ProjectManager
 
+SIZE_TITLE = 60
+SIZE_LABEL = 45
+SIZE_UNITS = 30
+SIZE_DAYS_OF_WEEK = 35
+
 def main(num_weeks, to_show):
+    global SIZE_TITLE, SIZE_LABEL, SIZE_UNITS, SIZE_DAYS_OF_WEEK
     pm = ProjectManager()
     personal_dir = pm.personal_dir
     track_targets_path = '{}/track_targets'.format(personal_dir)
@@ -99,8 +105,9 @@ def main(num_weeks, to_show):
         _ax = fig.add_subplot(math.ceil(len(titles)/plot_width)+2 ,plot_width , i + 1)
 
         _ax.get_yaxis().set_visible(False)
-        _ax.set_title(titles[i], fontsize=20)
-        _ax.xaxis.set(ticks=np.arange(0.5, 8, 1), ticklabels=x_tick_labels)
+        _ax.set_title(titles[i], fontsize=SIZE_TITLE)
+        _ax.xaxis.set(ticks=np.arange(0.5, 8, 1), ticklabels=x_tick_labels)#, labelsize=40)
+        _ax.xaxis.set_tick_params(labelsize=SIZE_DAYS_OF_WEEK)
         nrows = days_offset // 7 + 1
 
         status_array = [np.nan] * nrows * 7
@@ -123,7 +130,8 @@ def main(num_weeks, to_show):
         )
 
         cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap=cmaps[i])
-        cbar.set_label(units[i], size=15, color='lightgray')
+        cbar.ax.tick_params(labelsize=SIZE_UNITS) 
+        cbar.set_label(units[i], size=SIZE_LABEL, color='lightgray')
 
     for c, item in enumerate(special_track_targets.items()):
         k,v = item
@@ -159,7 +167,7 @@ def main(num_weeks, to_show):
         _ax = fig.add_subplot(math.ceil(len(titles)/plot_width)+2 ,plot_width , (math.ceil(len(titles) / plot_width) + 1)*plot_width + c + 1)
         _ax.get_xaxis().set_visible(False)
         _ax.get_yaxis().set_visible(False)
-        _ax.set_title(k, fontsize=20)
+        _ax.set_title(k, fontsize=SIZE_TITLE)
         pcm = _ax.pcolormesh(
             status_array,
             edgecolors='grey',
@@ -168,9 +176,11 @@ def main(num_weeks, to_show):
             vmin=-0.1,
             vmax=10.1
         )
+        #pcm.tick_params(labelsize=100) 
 
         cbar = fig.colorbar(pcm, ax=_ax, orientation='horizontal',cmap='RdYlGn')
-        cbar.set_label('points', size=15, color='lightgray')
+        cbar.ax.tick_params(labelsize=SIZE_UNITS) 
+        cbar.set_label('points', size=SIZE_LABEL, color='lightgray')
 
     plt.tight_layout(pad=10, w_pad=10, h_pad=10)
     plt.subplots_adjust(hspace=.3)
