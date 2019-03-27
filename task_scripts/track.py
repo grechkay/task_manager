@@ -44,7 +44,7 @@ def main(track_date, track_target, track_value):
     pm = ProjectManager()
     track_path = pm.personal_dir
     track_targets_path = '{}/track_targets'.format(track_path)
-    all_track_targets = os.listdir(track_targets_path)
+    all_track_targets = sorted(os.listdir(track_targets_path))
 
      # today
     if not track_target and not track_date and not track_value: # user just called track.py with no arguments --> show targets for today
