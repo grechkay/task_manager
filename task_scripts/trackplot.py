@@ -66,7 +66,7 @@ def main(num_weeks, to_show):
         date_str = (today - day_delta * i).strftime('%Y-%m-%d')
         day_to_idx[date_str] = days_offset  - i
 
-    for track_target in all_track_targets:
+    for track_target in sorted(all_track_targets):
         title = track_target.split('.')[0]
         try:
             df = pd.read_csv(
