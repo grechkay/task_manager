@@ -10,10 +10,10 @@ import math
 import argparse
 from project_manager import ProjectManager
 
-SIZE_TITLE = 60
-SIZE_LABEL = 45
-SIZE_UNITS = 30
-SIZE_DAYS_OF_WEEK = 35
+SIZE_TITLE = 60 / 5
+SIZE_LABEL = 45 / 5
+SIZE_UNITS = 30 / 5
+SIZE_DAYS_OF_WEEK = 35 / 5
 
 def main(num_weeks, to_show):
     global SIZE_TITLE, SIZE_LABEL, SIZE_UNITS, SIZE_DAYS_OF_WEEK
