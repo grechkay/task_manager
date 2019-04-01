@@ -1,7 +1,9 @@
 The first thing to do is to name the directory that was
 pulled from github as 'core' and put it in your home directory.
 
-1) In your ~/.bash_profile add the line (without the quotes): "export PERSONAL_DIRECTORY=personal"
+1) In your ~/.bash_profile 
+ - add the line (without the quotes): "export PERSONAL_DIRECTORY=personal"
+ - add the line (without the quotes): "export MPLBACKEND=TkAgg"
 2) Run "source ~/.bash_profile"
 3) Install taskwarrior (brew install task)
 4) Execute "task list" in your command line in order for taskwarrior to do its setup.
